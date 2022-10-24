@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../10_flow_control/107_temary_operators"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"iostream": "cpp",
+			"utility": "cpp"
+		}
+	}
+}
