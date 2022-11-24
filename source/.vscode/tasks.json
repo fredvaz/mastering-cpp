@@ -12,8 +12,8 @@
 				//"${workspaceFolder}\\*.cpp",
 				"${fileDirname}\\*.cpp",
 				"-o",
-				//"C:\\Dev\\masterclass_cpp20\\source\\main.exe"
-				"${fileDirname}\\zeta.exe"
+				"C:\\Dev\\masterclass_cpp20\\source\\main.exe"
+				//"${fileDirname}\\zeta.exe"
 			],
 			"options": {
 				//cwd": "C:\\Dev\\masterclass_cpp20\\source"

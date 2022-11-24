@@ -309,93 +309,11 @@ using namespace std;
 
 //
 
-// Function Declaration prototypes
-// The prototype needs to come before the funcion call in the file
-int max(int a, int b); // Function declaration , prototype
-                       // Signature doesn't include return type
-int min(int a, int b);
-
-int inc_mult(int a, int b);
-
-//
-
 int main(int argc, char **argv)
 {
     /*
     General Notes: char **argv <=> char *argv[]
     */
-#ifdef Test_main_func
-    cout << "\nTest main() func:" << endl;
-
-    cout << "We have " << argc << " arguments passed to the program" << endl;
-
-    // Check the number of parameters
-    if (argc != 4)
-    {
-        cerr << "Program can only be called with 3 arguments like: " << endl;
-        cerr << "Program name a + b" << endl;
-        cerr << "You called with : ";
-
-        for (size_t i{0}; i < argc; i++)
-        {
-            cout << " " << argv[i];
-        }
-        cout << endl;
-        return 0;
-    }
-
-    // Grab the operands
-    double first_number{atof(argv[1])};
-    double second_number{atof(argv[3])};
-
-    if ((first_number == 0.0) || (second_number == 0.0))
-    {
-        cout << "Please, use valid numbers (different from zero) for first and second parameter" << endl;
-    }
-
-    // Grab the operation
-    const char *operation{argv[2]};
-    char c;
-
-    if ((strlen(operation) == 1) &&
-        ((operation[0] == '+') ||
-         (operation[0] == '-') ||
-         (operation[0] == 'x') ||
-         (operation[0] == '/')))
-    {
-        c = operation[0];
-    }
-    else
-    {
-        cerr << operation << " is not a valid operation." << endl;
-        return 0;
-    }
-
-    // Do the operation
-    switch (c)
-    {
-    case '+':
-        cout << first_number << " + " << second_number << " = "
-             << first_number + second_number << endl;
-        break;
-
-    case '-':
-        cout << first_number << " - " << second_number << "="
-             << first_number - second_number << endl;
-        break;
-
-    case 'x':
-        cout << first_number << " * " << second_number << " = "
-             << first_number * second_number << endl;
-        break;
-
-    case '/':
-        cout << first_number << " / " << second_number << " = "
-             << first_number / second_number << endl;
-        break;
-    }
-
-#endif
 
 #ifdef debugging_in_vscode
 
@@ -456,29 +374,6 @@ int main(int argc, char **argv)
     cout << endl;
     return 0;
 }
-
-#ifdef functions_declaration
-// Function definition or implementation Shows up after main 
-int max(int a, int b){
-    if(a > b)
-        return a;
-    else
-        return b;
-}
-
-
-//Function definition. Shows up after main 
-int min(int a, int b){
-    if(a < b)
-        return a;
-    else
-        return b;
-}
-
-int inc_mult( int a, int b){
-    return ( (++a)*(++b));
-}
-#endif
 
 
 #ifdef with_const_parameters_by_value

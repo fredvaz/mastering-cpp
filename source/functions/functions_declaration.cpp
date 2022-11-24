@@ -36,7 +36,6 @@ using namespace std;
 /*
     Notes:  #define TEST_CASE_1
 
-
             Test Case: functions declarations and calls
 */
 
@@ -89,6 +88,56 @@ int min(int a, int b)
 int inc_mult(int a, int b)
 {
     return ((++a) * (++b));
+}
+
+#endif // TEST_CASE_N EN
+
+//
+
+//#define TEST_CASE_2
+#ifdef TEST_CASE_2
+/*
+    Notes:  #define TEST_CASE_2
+
+            Test Case: Coding Exercise 26
+
+            Showing the odds!
+            Your job is to write a function that takes in an unsigned long long int value and prints
+            out it odd digits from the least significant to the most significant. For example if we
+            have 98723713 as input, your function should use std::cout to print 317379 . Your code
+            should just print the digits in the specified order; no spaces in between, no new lines
+            no nothing!
+*/
+
+void show_odds(unsigned long long int num)
+{
+
+    unsigned int digit = 0;
+    unsigned long long int inside_num = num;
+
+    while (inside_num > 0)
+    {
+        digit = inside_num % 10;
+        if (digit % 2 != 0)
+        {
+            cout << digit;
+        }
+        inside_num = inside_num / 10;
+    }
+    cout << endl;
+}
+
+int main()
+{
+
+    cout << "------------------------------ Test Case 2 -------------------------------------" << endl;
+
+    unsigned long long int value{98723713};
+
+    show_odds(value);
+
+    cout << "--------------------------------------------------------------------------------" << endl;
+    return 0;
 }
 
 #endif // TEST_CASE_N END
