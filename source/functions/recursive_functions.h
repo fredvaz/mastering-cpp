@@ -36,3 +36,24 @@ void test1()
     cout << "result : " << sum_up_to_zero(10) << endl;
 }
 #endif
+
+#ifdef Test2
+/*                                           Coding exercise 37                                */
+unsigned int factorial(unsigned int n)
+{
+    if (n > 1)
+        return n * factorial(n - 1);
+    else
+        return 1;
+}
+
+void test2()
+{
+    /*
+    Notes:
+    */
+    unsigned int n{5};
+
+    cout << n << "! (factorial) : " << factorial(5);
+}
+#endif

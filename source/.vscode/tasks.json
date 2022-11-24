@@ -8,12 +8,15 @@
 			"args": [
 				"-g",
 				"-std=c++20",
+				//"C:\\Dev\\masterclass_cpp20\\source\\*.cpp",
 				"${workspaceFolder}\\*.cpp",
 				"-o",
-				"${fileDirname}\\main.exe"
+				"C:\\Dev\\masterclass_cpp20\\source\\main.exe"
+				//"${fileDirname}\\main.exe"
 			],
 			"options": {
-				"cwd": "${fileDirname}"
+				"cwd": "C:\\Dev\\masterclass_cpp20\\source"
+				//"cwd": "${fileDirname}"
 			},
 			"problemMatcher": [
 				"$gcc"

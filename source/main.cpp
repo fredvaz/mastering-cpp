@@ -78,6 +78,30 @@ The C++20 Masterclass: From Fundamentals to Advanced
 #include "enums_and_type_aliases/type_aliases.h"
 #endif
 
+#define Test3
+#define functions_first_steps
+#ifdef functions_first_steps
+#include "functions/functions_first_steps.cpp"
+#endif
+
+// #define Test1
+// #define static_variables
+#ifdef static_variables
+#include "functions/static_variables.h"
+#endif
+
+// #define Test1
+// #define inline_functions
+#ifdef inline_functions
+#include "functions/inline_functions.h"
+#endif
+
+// #define Test1
+// #define recursive_functions
+#ifdef recursive_functions
+#include "functions/recursive_functions.h"
+#endif
+
 // #ifdef grab_and_use_the_arguments
 // #include "arguments_to_main_func/grab_and_use_the_arguments.h"
 // #endif
@@ -92,32 +116,32 @@ The C++20 Masterclass: From Fundamentals to Advanced
 
 // #define Test_main_func
 
-#ifdef overloading_with_different_parameters
-#include "function_overloading/overloading_with_different_parameters.h"
+#ifdef with_different_parameters
+#include "function_overloading/with_different_parameters.h"
 #endif
 
-#ifdef overloading_with_pointer_parameters
-#include "function_overloading/overloading_with_pointer_parameters.h"
+#ifdef with_pointer_parameters
+#include "function_overloading/with_pointer_parameters.h"
 #endif
 
-#ifdef overloading_with_reference_parameters
-#include "function_overloading/overloading_with_reference_parameters.h"
+#ifdef with_reference_parameters
+#include "function_overloading/with_reference_parameters.h"
 #endif
 
-#ifdef overloading_with_const_parameters_by_value
-#include "function_overloading/overloading_with_const_parameters_by_value.h"
+#ifdef with_const_parameters_by_value
+#include "function_overloading/with_const_parameters_by_value.h"
 #endif
 
-#ifdef overloading_with_const_pointer_and_pointer_to_const_parameters
-#include "function_overloading/overloading_with_const_pointer_and_pointer_to_const_parameters.h"
+#ifdef with_const_pointer_and_pointer_to_const_parameters
+#include "function_overloading/with_const_pointer_and_pointer_to_const_parameters.h"
 #endif
 
-#ifdef overloading_with_const_references
-#include "function_overloading/overloading_with_const_references.h"
+#ifdef with_const_references
+#include "function_overloading/with_const_references.h"
 #endif
 
-#ifdef overloading_with_default_parameters
-#include "function_overloading/overloading_with_default_parameters.h"
+#ifdef with_default_parameters
+#include "function_overloading/with_default_parameters.h"
 #endif
 
 #ifdef coding_exercise_34
@@ -125,40 +149,15 @@ The C++20 Masterclass: From Fundamentals to Advanced
 #endif
 
 #ifdef declaring_and_using_lambdas
-#include "lambda_functions/declaring_and_using_lambdas.h"
+#include "lambda_expressions/declaring_and_using_lambdas.h"
 #endif
 
 #ifdef capture_lists
-#include "lambda_functions/capture_lists.h"
+#include "lambda_expressions/capture_lists.h"
 #endif
 
 #ifdef capture_all_lists
-#include "lambda_functions/capture_all_lists.h"
-#endif
-
-#ifdef static_variables
-#include "functions_the_misfits/static_variables.h"
-#endif
-
-#ifdef inline_functions
-#include "functions_the_misfits/inline_functions.h"
-#endif
-
-#ifdef recursive_functions
-#include "functions_the_misfits/recursive_functions.h"
-#endif
-
-#ifdef coding_exercise_35
-#include "functions_the_misfits/coding_exercise_35.h"
-#endif
-
-#ifdef coding_exercise_36
-#include "functions_the_misfits/coding_exercise_36.h"
-#endif
-
-//#define coding_exercise_37
-#ifdef coding_exercise_37
-#include "functions_the_misfits/coding_exercise_37.h"
+#include "lambda_expressions/capture_all_lists.h"
 #endif
 
 //define debugging_in_vscode
@@ -294,8 +293,8 @@ The C++20 Masterclass: From Fundamentals to Advanced
 #include "classes_and_objects/mutable_objects.h"
 #endif
 
-#define Test1
-#define structured_bindings
+// #define Test1
+// #define structured_bindings
 #ifdef structured_bindings
 #include "classes_and_objects/structured_bindings.h"
 #endif
@@ -441,7 +440,7 @@ int main(int argc, char **argv)
     return 0;
 }
 
-#ifdef overloading_with_const_parameters_by_value
+#ifdef with_const_parameters_by_value
 int max(const int a, const int b)
 {
     //++a; // It wil generate a Compiler error because the var is not allowed to be modified
@@ -449,7 +448,7 @@ int max(const int a, const int b)
 }
 #endif
 
-#ifdef overloading_with_default_parameters
+#ifdef with_default_parameters
 void print_age(int age)
 {
     cout << "Your age is (int version) : " << age << endl;

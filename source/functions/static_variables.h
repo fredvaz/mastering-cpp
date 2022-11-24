@@ -58,9 +58,55 @@ void test1()
 #endif
 
 #ifdef Test2
+
 void do_something()
 {
     student_cout; // The variable is only on the scope of the add_student
                   // Therefore not accesible to others functions
+}
+#endif
+
+#ifdef Test3
+/*                                           Conding exercise 35                                 */
+void func()
+{
+
+    static unsigned int count{0};
+    count++;
+    cout << count << " ";
+}
+
+void do_work(unsigned int n)
+{
+    for (unsigned int i{0}; i < n; ++i)
+    {
+        func();
+    }
+}
+#endif
+
+#ifdef Test4
+/*                                           Conding exercise 36                                */
+int odd()
+{
+    static int odd{-1};
+    odd += 2;
+    return odd;
+}
+
+void print_odds(unsigned int count)
+{
+    for (size_t i{0}; i < count; i++)
+    {
+        std::cout << odd() << " ";
+    }
+}
+
+void test4()
+{
+    /*
+    Notes:
+    */
+    print_odds(10);
 }
 #endif
