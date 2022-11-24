@@ -78,10 +78,16 @@ The C++20 Masterclass: From Fundamentals to Advanced
 #include "enums_and_type_aliases/type_aliases.h"
 #endif
 
-#define Test3
-#define functions_first_steps
+// #define Test1
+// #define functions_first_steps
 #ifdef functions_first_steps
 #include "functions/functions_first_steps.cpp"
+#endif
+
+#define Test1
+#define functions_declaration
+#ifdef functions_declaration
+#include "functions/functions_declaration.cpp"
 #endif
 
 // #define Test1
@@ -299,8 +305,19 @@ The C++20 Masterclass: From Fundamentals to Advanced
 #include "classes_and_objects/structured_bindings.h"
 #endif
 
-
 using namespace std;
+
+//
+
+// Function Declaration prototypes
+// The prototype needs to come before the funcion call in the file
+int max(int a, int b); // Function declaration , prototype
+                       // Signature doesn't include return type
+int min(int a, int b);
+
+int inc_mult(int a, int b);
+
+//
 
 int main(int argc, char **argv)
 {
@@ -309,7 +326,7 @@ int main(int argc, char **argv)
     */
 #ifdef Test_main_func
     cout << "\nTest main() func:" << endl;
-    
+
     cout << "We have " << argc << " arguments passed to the program" << endl;
 
     // Check the number of parameters
@@ -326,8 +343,8 @@ int main(int argc, char **argv)
         cout << endl;
         return 0;
     }
-       
-    // Grab the operands 
+
+    // Grab the operands
     double first_number{atof(argv[1])};
     double second_number{atof(argv[3])};
 
@@ -341,17 +358,17 @@ int main(int argc, char **argv)
     char c;
 
     if ((strlen(operation) == 1) &&
-               ((operation[0] == '+') || 
-               (operation[0] == '-') || 
-               (operation[0] == 'x') || 
-               (operation[0] == '/')))
+        ((operation[0] == '+') ||
+         (operation[0] == '-') ||
+         (operation[0] == 'x') ||
+         (operation[0] == '/')))
     {
         c = operation[0];
     }
     else
     {
-    cerr << operation << " is not a valid operation." << endl;
-    return 0;
+        cerr << operation << " is not a valid operation." << endl;
+        return 0;
     }
 
     // Do the operation
@@ -440,6 +457,30 @@ int main(int argc, char **argv)
     return 0;
 }
 
+#ifdef functions_declaration
+// Function definition or implementation Shows up after main 
+int max(int a, int b){
+    if(a > b)
+        return a;
+    else
+        return b;
+}
+
+
+//Function definition. Shows up after main 
+int min(int a, int b){
+    if(a < b)
+        return a;
+    else
+        return b;
+}
+
+int inc_mult( int a, int b){
+    return ( (++a)*(++b));
+}
+#endif
+
+
 #ifdef with_const_parameters_by_value
 int max(const int a, const int b)
 {
@@ -456,12 +497,12 @@ void print_age(int age)
 
 void print_age(long int age)
 {
-    cout << "Your age is (long int version) : " << age << endl; 
+    cout << "Your age is (long int version) : " << age << endl;
 }
 #endif
 
 #ifdef debugging_in_vscode
-int &adjust(int & input)
+int &adjust(int &input)
 {
     int adjustment{2};
     input += adjustment;

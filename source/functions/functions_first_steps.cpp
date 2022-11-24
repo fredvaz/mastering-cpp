@@ -19,7 +19,7 @@ General Notes:
         This is known as function overloading. Function declarations that differ only in the return
         type and the noexcept specification (since C++17) cannot be overloaded. 
 
-        Function signature: function ame + function parameters
+        Function signature: function name + function parameters
 
    [REF]:
         https://en.cppreference.com/w/cpp/language/functions
@@ -29,8 +29,16 @@ General Notes:
 
 using namespace std;
 
-#ifdef Test1
-/*                   Test Case: functions declarations and calls                                 */
+//
+
+//#define TEST_CASE_1
+#ifdef TEST_CASE_1
+/*
+    Notes:  #define TEST_CASE_1
+
+
+            Test Case: functions declarations and calls
+*/
 
 // Function that takes a single parameter, and doesn't give back the result explicitly
 void enter_bar(size_t age)
@@ -68,14 +76,10 @@ int lucky_number()
     return 99;
 }
 
-void test1()
+int main()
 {
-    /*
-    Notes:  #define Test1
 
-            Test Case: functions declarations and calls
-    */
-    cout << "--------------------------------------------------------------------------------" << endl;
+    cout << "------------------------------ Test Case 1 -------------------------------------" << endl;
 
     // Calling enter_bar
     enter_bar(22); // Function arguments
@@ -110,11 +114,19 @@ void test1()
     cout << "result : " << result2 << endl;
 
     cout << "--------------------------------------------------------------------------------" << endl;
+    return 0;
 }
-#endif
+#endif // TEST_CASE_N END
 
-#ifdef Test2
-/*                Test Case: Parameters inside a function are copies                                 */
+//
+
+//#define TEST_CASE_2
+#ifdef TEST_CASE_2
+/*
+    Notes:  #define TEST_CASE_2
+
+            Test Case: Parameters inside a function are copies 
+*/
 
 // Parameters passed this way are scoped localy in the function.
 // Changes to them are not visible outside the function. What we
@@ -137,14 +149,10 @@ double increment_multiply(double a, double b)
     return result;
 }
 
-void test2()
+int main()
 {
-    /*
-    Notes:  #define Test2
 
-            Test Case: Parameters inside a function are copies 
-    */
-    cout << "--------------------------------------------------------------------------------" << endl;
+    cout << "------------------------------ Test Case 2 -------------------------------------" << endl;
 
     double h{3.00};
     double i{4.00};
@@ -160,25 +168,32 @@ void test2()
     cout << "i : " << i << endl;
 
     cout << "--------------------------------------------------------------------------------" << endl;
+    return 0;
 }
-#endif
 
-#ifdef Test3
-/*                        Test Case: Coding Exercise 25                                             */
+#endif // TEST_CASE_N END
+
+//
+
+//#define TEST_CASE_3
+#ifdef TEST_CASE_3
 /*
+    Notes:  #define TEST_CASE_3
 
-Sum up the digits
-Your job is to write a C++ function that sums up all the digits in an integer. For example if we pass
-an unsigned integer 79 into the function, it should sum up the digits and return the result as 16.
-Your function should be able to handle any number of digits. Again if we pass in 62727289 we should
-get 43 returned from the function.
+            Test Case: Coding Exercise 25 
 
-The requirement is that the input parameter is of type unsigned int and the return type is also
-unsigned int. The function name has to be exactly digit_sum.
+    Sum up the digits
+    Your job is to write a C++ function that sums up all the digits in an integer. For example if we pass
+    an unsigned integer 79 into the function, it should sum up the digits and return the result as 16.
+    Your function should be able to handle any number of digits. Again if we pass in 62727289 we should
+    get 43 returned from the function.
 
-Hint : You may use the % operator to extract digits and the integer division operator to grab
-the remaining integer after you extract a single digit. You will put all this machinery in a loop
-so that your code can theoretically handle any number of digits.
+    The requirement is that the input parameter is of type unsigned int and the return type is also
+    unsigned int. The function name has to be exactly digit_sum.
+
+    Hint : You may use the % operator to extract digits and the integer division operator to grab
+    the remaining integer after you extract a single digit. You will put all this machinery in a loop
+    so that your code can theoretically handle any number of digits.
 */
 
 unsigned int digit_sum(unsigned int num)
@@ -197,14 +212,10 @@ unsigned int digit_sum(unsigned int num)
     return sum;
 }
 
-void test3()
+int main()
 {
-    /*
-    Notes:  #define Test2
 
-            Test Case: Coding Exercise 25 
-    */
-    cout << "--------------------------------------------------------------------------------" << endl;
+    cout << "------------------------------ Test Case 3 -------------------------------------" << endl;
 
     unsigned int digit_var = 79;
 
@@ -213,5 +224,7 @@ void test3()
     cout << "result: " << result << endl;
 
     cout << "--------------------------------------------------------------------------------" << endl;
+    return 0;
 }
-#endif
+
+#endif // TEST_CASE_N END

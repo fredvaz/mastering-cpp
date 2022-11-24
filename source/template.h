@@ -12,32 +12,47 @@ General Notes:
 
 using namespace std;
 
-#ifdef Test1
-/*                                          Test Case:                                              */
-void test1()
-{
-    /*
-    Notes:  #define Test1
+//
+
+#define TEST_CASE_1
+#ifdef TEST_CASE_1
+/*
+    Notes:  #define TEST_CASE_1
 
             Test Case: 
-    */
-    cout << "--------------------------------------------------------------------------------" << endl;
-
-    cout << "--------------------------------------------------------------------------------" << endl;
-}
-#endif
-
-#ifdef Test2
-/*                                          Test Case:                                              */
-void test2()
+*/
+int main()
 {
-    /*
-    Notes:  #define Test2
+
+    cout << "------------------------------ Test Case 1 -------------------------------------" << endl;
+
+    //
+
+    cout << "--------------------------------------------------------------------------------" << endl;
+    return 0;
+}
+
+#endif // Test Case END
+
+//
+
+#define TEST_CASE_2
+#ifdef TEST_CASE_2
+/*
+    Notes:  #define TEST_CASE_2
 
             Test Case: 
-    */
-    cout << "--------------------------------------------------------------------------------" << endl;
+*/
+int main()
+{
+
+    cout << "------------------------------ Test Case 2 -------------------------------------" << endl;
+
+    //
 
     cout << "--------------------------------------------------------------------------------" << endl;
+    return 0;
 }
-#endif
+
+#endif // TEST_CASE_N END
+#endif // MAIN_FILE END
