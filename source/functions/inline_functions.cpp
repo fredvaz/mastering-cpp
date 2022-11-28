@@ -2,7 +2,7 @@
 
 The C++20 Masterclass: Inline Functions
 
-General Notes from cplusplus.com:
+General Notes:
     The inline functions are a C++ enhancement feature to increase the execution time of a program. 
     Functions can be instructed to compiler to make them inline so that compiler can replace those 
     function definition wherever those are being called. Compiler replaces the definition of inline
@@ -15,9 +15,17 @@ General Notes from cplusplus.com:
 */
 #include <iostream>
 
-#define Test1
-
 using namespace std;
+
+//
+
+// #define TEST_CASE_1
+#ifdef TEST_CASE_1
+/*
+    Notes:  #define TEST_CASE_1
+
+            Test Case: 
+*/
 
 inline int max(int a, int b)
 {
@@ -31,26 +39,29 @@ inline int max(int a, int b)
     }
 }
 
-#ifdef Test1
-void test1()
+int main()
 {
-    /*
-    Notes:
-    */
+
+    cout << "------------------------------ Test Case 1 -------------------------------------" << endl;
+
     int a{5};
     int b{8};
 
-    cout << "max : " << max(a, b) << endl;
+    cout << "max: " << max(a, b) << endl;
 
     // What the compiler might do to inline your function call
-    std::cout << "max : ";
+    cout << "max: ";
     if (a > b)
     {
-        std::cout << a << std::endl;
+        cout << a << endl;
     }
     else
     {
-        std::cout << b << std::endl;
+        cout << b << endl;
     }
+
+    cout << "--------------------------------------------------------------------------------" << endl;
+    return 0;
 }
-#endif
+
+#endif // Test Case END
