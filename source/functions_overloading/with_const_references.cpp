@@ -6,22 +6,28 @@ General Notes:
 
 
    [REF]:
-
    
 */
-
 #include <iostream>
 
-#define Test1
-
 using namespace std;
+
+//
+
+// #define TEST_CASE_1
+#ifdef TEST_CASE_1
+/*
+    Notes:  #define TEST_CASE_1
+
+            Test Case: 
+*/
 
 int max(int &a, int &b)
 {
     cout << "max with int & called" << endl;
     // We can change the a and b variables through the reference
     // This change will be visible outside the function
-    a = 200; 
+    a = 200;
     return (a > b) ? a : b;
 }
 
@@ -29,18 +35,16 @@ int max(const int &a, const int &b)
 {
     cout << "max with the const int & called" << endl;
 
-    // We can NOT change the a an b variables through the reference 
+    // We can NOT change the a an b variables through the reference
     // The below statement will give a Compiler Error
     // a = 200;
     return (a > b) ? a : b;
 }
 
-#ifdef Test1
-void test1()
+int main()
 {
-    /*
-    Notes:
-    */
+    cout << "------------------------------ Test Case 1 -------------------------------------" << endl;
+
     int a{45};
     int b{85};
 
@@ -54,5 +58,9 @@ void test1()
     int result1 = max(ref_a, ref_b);
 
     cout << "result1 : " << result1 << endl;
+
+    cout << "--------------------------------------------------------------------------------" << endl;
+    return 0;
 }
-#endif
+
+#endif // Test Case END

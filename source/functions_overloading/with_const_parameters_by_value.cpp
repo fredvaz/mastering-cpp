@@ -6,15 +6,21 @@ General Notes:
 
 
    [REF]:
-
    
 */
-
 #include <iostream>
 
-#define Test1
-
 using namespace std;
+
+//
+
+// #define TEST_CASE_1
+#ifdef TEST_CASE_1
+/*
+    Notes:  #define TEST_CASE_1
+
+            Test Case: 
+*/
 
 // int max(int a, int b)
 // {
@@ -38,20 +44,20 @@ using namespace std;
 // Declaration
 int max(int a, int b);
 
-#ifdef Test1
-void test1()
+int main()
 {
-    /*
-    Notes:
-    */
-}
-#endif
+    cout << "------------------------------ Test Case 1 -------------------------------------" << endl;
 
-#ifdef Test2
-void test2()
-{
-    /*
-    Notes:
-    */
+    //
+
+    cout << "--------------------------------------------------------------------------------" << endl;
+    return 0;
 }
-#endif
+
+int max(const int a, const int b)
+{
+    //++a; // It wil generate a Compiler error because the var is not allowed to be modified
+    return (a > b) ? a : b;
+}
+
+#endif // Test Case END

@@ -6,15 +6,21 @@ General Notes:
 
 
    [REF]:
-
    
 */
-
 #include <iostream>
 
-#define Test1
-
 using namespace std;
+
+//
+
+// #define TEST_CASE_1
+#ifdef TEST_CASE_1
+/*
+    Notes:  #define TEST_CASE_1
+
+            Test Case: 
+*/
 
 double max(double *numbers, size_t count)
 {
@@ -45,7 +51,7 @@ int max(int *numbers, size_t count)
     }
     return maximum;
 }
-// The following funcstion are the samething as the one above, because int numbers[], which is the address for array index 0, is equal to pointer int *numbers 
+// The following funcstion are the samething as the one above, because int numbers[], which is the address for array index 0, is equal to pointer int *numbers
 // int max(int numbers[], size_t count)
 // {
 //     // Test
@@ -61,12 +67,10 @@ int max(int *numbers, size_t count)
 //     return 0;
 // }
 
-#ifdef Test1
-void test1()
+int main()
 {
-    /*
-    Notes:
-    */
+    cout << "------------------------------ Test Case 1 -------------------------------------" << endl;
+
     double doubles[]{10.0, 20.0, 12.3};
     int ints[]{1, 2, 5, 2, 8, 4};
 
@@ -77,5 +81,9 @@ void test1()
     auto result1 = max(ints, size(ints));
 
     cout << "result1: " << result1 << endl;
+
+    cout << "--------------------------------------------------------------------------------" << endl;
+    return 0;
 }
-#endif
+
+#endif // Test Case END

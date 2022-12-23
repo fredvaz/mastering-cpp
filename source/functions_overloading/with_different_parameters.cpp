@@ -2,17 +2,28 @@
 
 The C++20 Masterclass: Function Overloading
 
-General Notes from cplusplus.com:
+General Notes:
     In C++, two different functions can have the same name if their parameters are different; 
     either because they have a different number of parameters, 
     because any of their parameters are of a different type
 
+    [REF]:
 */
 #include <iostream>
 
-#define Test1
-
 using namespace std;
+
+//
+
+// #define TEST_CASE_1
+#ifdef TEST_CASE_1
+/*
+    Notes:  #define TEST_CASE_1
+
+            Test Case: Function Overloading is a mechanism we have in C++ to have multiple copies of the same function
+           but taking different parameters
+           And can't overload the return type
+*/
 
 int max(int a, int b)
 {
@@ -57,16 +68,11 @@ string_view max(string_view a, string_view b)
     return (a > b) ? a : b;
 }
 
-#ifdef Test1
-void test1()
+int main()
 {
-    /*
-    Notes: Function Overloading is a mechanism we have in C++ to have multiple copies of the same function
-           but taking different parameters
-           And can't overload the return type
-    */
+    cout << "------------------------------ Test Case 1 -------------------------------------" << endl;
 
-   int x{4};
+       int x{4};
    int y{9};
 
    double a{5.4};
@@ -83,5 +89,8 @@ void test1()
 
    cout << max("Hello", "World!") << endl;
 
+    cout << "--------------------------------------------------------------------------------" << endl;
+    return 0;
 }
-#endif
+
+#endif // Test Case END

@@ -375,27 +375,6 @@ int main(int argc, char **argv)
     return 0;
 }
 
-
-#ifdef with_const_parameters_by_value
-int max(const int a, const int b)
-{
-    //++a; // It wil generate a Compiler error because the var is not allowed to be modified
-    return (a > b) ? a : b;
-}
-#endif
-
-#ifdef with_default_parameters
-void print_age(int age)
-{
-    cout << "Your age is (int version) : " << age << endl;
-}
-
-void print_age(long int age)
-{
-    cout << "Your age is (long int version) : " << age << endl;
-}
-#endif
-
 #ifdef debugging_in_vscode
 int &adjust(int &input)
 {

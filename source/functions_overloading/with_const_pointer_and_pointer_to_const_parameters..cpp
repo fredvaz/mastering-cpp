@@ -6,15 +6,21 @@ General Notes:
 
 
    [REF]:
-
    
 */
-
 #include <iostream>
 
-#define Test1
-
 using namespace std;
+
+//
+
+// #define TEST_CASE_1
+#ifdef TEST_CASE_1
+/*
+    Notes:  #define TEST_CASE_1
+
+            Test Case: 
+*/
 
 int max(int *a, int *b)
 {
@@ -43,12 +49,10 @@ int min(const int *const a, const int *const b)
     return (*a < *b) ? *a : *b;
 }
 
-#ifdef Test1
-void test1()
+int main()
 {
-    /*
-    Notes:
-    */
+    cout << "------------------------------ Test Case 1 -------------------------------------" << endl;
+
     int a{10};
     int b{12};
 
@@ -65,5 +69,9 @@ void test1()
     cout << "&p_d : " << &p_d << endl;
 
     auto result1 = min(p_c, p_d);
+
+    cout << "--------------------------------------------------------------------------------" << endl;
+    return 0;
 }
-#endif
+
+#endif // Test Case END
