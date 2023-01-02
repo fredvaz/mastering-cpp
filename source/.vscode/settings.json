@@ -60,7 +60,8 @@
         "bitset": "cpp",
         "iomanip": "cpp",
         "xlocmon": "cpp",
-        "xloctime": "cpp"
+        "xloctime": "cpp",
+        "optional": "cpp"
     },
     "C_Cpp.dimInactiveRegions": false
 }
