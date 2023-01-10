@@ -61,3 +61,27 @@ int main()
 #endif // TEST_CASE_N END
 
 //
+
+// #define TEST_CASE_N
+#ifdef TEST_CASE_N
+/*
+    Notes:  #define TEST_CASE_N
+
+            Test Case: 
+*/
+
+//
+
+int main()
+{
+    cout << "------------------------------ Test Case N -------------------------------------" << endl;
+
+    //
+
+    cout << "--------------------------------------------------------------------------------" << endl;
+    return 0;
+}
+
+#endif // TEST_CASE_N END
+
+//
