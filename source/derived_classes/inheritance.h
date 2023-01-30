@@ -37,3 +37,20 @@ void test1()
     cout << "player : " << p1 << endl;
 }
 #endif
+
+#ifdef Test2
+void test2()
+{
+    /*
+    Notes: Protected members : Only Player Class can acess the private members of Class Person
+    */
+
+    Player p1("Basketball", "Frederico", "Vaz");
+    // Now we don't need acess ther member variables using the methods functions because
+    // the Player casses has protected access to he member variable of the Person Class
+    cout << "player : " << p1 << endl;
+
+    // Still we cannot direct acess externally the private members of the Base Class Person
+    //p1.first_name = "Daniel"; // Compiler Error
+}
+#endif
