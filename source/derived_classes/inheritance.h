@@ -54,3 +54,55 @@ void test2()
     //p1.first_name = "Daniel"; // Compiler Error
 }
 #endif
+
+#ifdef Test3
+void test3()
+{
+    /*
+    Notes: Private members : Base class access specifiers
+    */
+    Person person1("Daniel Gray", 27, "Blue Sky St 233 #56");
+    cout << "person1 : " << person1 << endl;
+
+    person1.m_full_name;
+    //person1.m_age; // Compiler Error : Protected member CANNOT be acessed outside of the Base Class
+
+    /* -------------------------------------------------------------------------------*/
+    // Player class will do public inheritance
+
+    Player player;
+
+    player.m_full_name = "Samuel Jackson"; // Public member of the Derivated class
+    //player.m_age = 55; // Compiler error : Protected member is acessible inside the Derivated Class
+    // but not from outisde of the class
+    //player.m_address = "2i892317322"; // Compiler : Private member is neither acessible
+    // inside the derivated class or Outside of the Class
+
+    /* -------------------------------------------------------------------------------*/
+    // Nurse class will do protected inheritance
+
+    Nurse nurse1;
+
+    //nurse1.m_full_name = "Davy Johnes"; // Compiler error : Now is Protected member in the Derivated class
+    //nurse1.m_age = 51; // Compiler error : Still Protected member
+
+    /* -------------------------------------------------------------------------------*/
+    // Engineer class is doing private inheritance
+
+    Engineer engineer1;
+
+    //engineer1.m_full_name = "Olivier Godson"; // Compiler error : Now is Private member in the Derivated class
+    //engineer1.m_age = 55; // Compiler error : Now is Private member in the Derivated class
+    //engineer1.m_address = "dsakfd;aslfjd;laskf"; // Compiler error : Still Private member
+
+    /* -------------------------------------------------------------------------------*/
+    // 403 : Closing in on Private Inheritance
+
+    // CivilEngineer class is doing private inheritance from Engineer class
+    // But the Engineer class is already private inheritance, so, it will selfish
+
+    CivilEngineer civilengineer1;
+
+    //engineer1.m_full_name = "Olivier Godson"; // Compiler error : Already Private member in the Base Class
+}
+#endif
