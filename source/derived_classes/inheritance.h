@@ -106,3 +106,29 @@ void test3()
     //engineer1.m_full_name = "Olivier Godson"; // Compiler error : Already Private member in the Base Class
 }
 #endif
+
+
+#ifdef Test4
+void test4()
+{
+    /*
+    Notes: Private members : Resurecting members back in context
+    */
+}
+#endif
+
+#ifdef Test5
+void test5()
+{
+    /*
+    Notes: Private members : Default Constructors with Inheritance
+
+           Constructors called order : Person -> Engineer -> CivilEngineer
+
+           Starts froms the most basic going down to the most specialized one
+    */
+    CivilEngineer ce1;
+
+    cout << "Hello!" << endl;
+}
+#endif
