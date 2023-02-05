@@ -132,3 +132,34 @@ void test5()
     cout << "Hello!" << endl;
 }
 #endif
+
+#define Test6
+#ifdef Test6
+void test6()
+{
+    /*
+    Notes: Private members : Custom Constructors with Inheritance
+
+           Constructirs parameters forward from the Derivated to Base class
+
+           Use of the initializer lists with Constructors whose job is going to be to 
+           initialize these member varaibles
+    */
+    cout << "----------------------------------------" << endl;
+
+    Person person1("John Snow", 27, "Winterfell Cold 33St#75");
+    cout << "person1 : " << person1 << endl;
+
+    cout << "----------------------------------------" << endl;
+
+    Engineer engineer1("John Snow", 27, "Winterfell Cold 33St#75", 12);
+    cout << "person1 : " << engineer1 << endl;
+
+    cout << "----------------------------------------" << endl;
+
+    CivilEngineer civilengineer1("John Snow", 27, "Winterfell Cold 33St#75", 12, "Bridges");
+    cout << "person1 : " << civilengineer1 << endl;
+
+    cout << "----------------------------------------" << endl;
+}
+#endif
