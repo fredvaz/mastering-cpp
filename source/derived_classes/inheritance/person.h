@@ -60,6 +60,8 @@ public:
     Person(); // = default; // Used when we don't declare the Destructor implementation
     Person(string &first_name_param, string &last_name_param);
     Person(string_view fullname, int age, string_view address);
+    // Test Case 7 : Set up our own Copy Constructor with Inheritance
+    Person(const Person &source);
     ~Person();
 
     friend ostream &operator<<(ostream &out, const Person &person);

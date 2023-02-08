@@ -26,7 +26,14 @@ CivilEngineer::CivilEngineer(string_view fullname, int age, string_view address,
                              int contract_count_param, std::string_view m_speciality_param)
     : Engineer(fullname, age, address, contract_count_param), m_speciality{m_speciality_param}
 {
-        cout << "Custom constructor for CivilEngineer called..." << endl;
+    cout << "Custom constructor for CivilEngineer called..." << endl;
+}
+
+// Test Case 7 : Set up our own Copy Constructor with Inheritance
+CivilEngineer::CivilEngineer(const CivilEngineer &source)
+    : Engineer(source), m_speciality{source.m_speciality}
+{
+    cout << "Copy Custom constructor for CivilEngineer called..." << endl;
 }
 
 #ifndef Test4

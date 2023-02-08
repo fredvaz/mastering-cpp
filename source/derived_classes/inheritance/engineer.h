@@ -26,7 +26,9 @@ General Notes:
 class Engineer : private Person
 #endif
 #ifdef Test5
-                 class Engineer : public Person
+
+class Engineer : public Person
+
 #endif
 {
 private:
@@ -36,6 +38,8 @@ public:
     Engineer();
     // Test6 : Constructor used to be used as Custom Constructors with Inheritance
     Engineer(std::string_view fullname, int age, std::string_view address, int contract_count_param);
+    // Test Case 7 : Set up our own Copy Constructor with Inheritance
+    Engineer(const Engineer &source);
     ~Engineer();
 
     void build_something()

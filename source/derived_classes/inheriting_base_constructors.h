@@ -14,10 +14,10 @@ General Notes:
 
 */
 #include <iostream>
-#include "inheritance/player.cpp"
-#include "inheritance/nurse.cpp"
-#include "inheritance/engineer.cpp"
-#include "inheritance/civilengineer.cpp"
+#include "player.cpp"
+#include "nurse.cpp"
+#include "engineer.cpp"
+#include "civilengineer.cpp"
 
 //#define Test1
 

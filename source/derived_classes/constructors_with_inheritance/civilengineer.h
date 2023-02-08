@@ -23,9 +23,15 @@ private:
 
 public:
     CivilEngineer();
-    // Test6 : Constructor used to be used as Custom Constructors with Inheritance
+    // Test  Case 6 : Constructor used to be used as Custom Constructors with Inheritance
     CivilEngineer(std::string_view fullname, int age, std::string_view address,
                   int contract_count_param, std::string_view m_speciality_param);
+
+#ifdef Test4
+    // Test Case : Set up our own Copy Constructor with Inheritance
+    CivilEngineer(const CivilEngineer &source);
+#endif
+
     ~CivilEngineer();
 
     void build_road()

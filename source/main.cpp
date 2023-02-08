@@ -241,9 +241,21 @@ The C++20 Masterclass: From Fundamentals to Advanced
 #include "namespaces/namespace_aliases.h"
 #endif
 
-#define inheritance
+//#define inheritance
 #ifdef inheritance
 #include "derived_classes/inheritance.h"
+#endif
+
+#define Test4
+#define constructors_with_inheritance
+#ifdef constructors_with_inheritance
+#include "derived_classes/constructors_with_inheritance.h"
+#endif
+
+//#define Test4
+//#define inheriting_base_constructors
+#ifdef inheriting_base_constructors
+#include "derived_classes/inheriting_base_constructors.h"
 #endif
 
 using namespace std;
@@ -375,6 +387,11 @@ int main(int argc, char **argv)
 #ifdef Test6
     cout << "\nTest 6:" << endl;
     test6();
+#endif
+
+#ifdef Test7
+    cout << "\nTest 7:" << endl;
+    test7();
 #endif
 
     cout << endl;
