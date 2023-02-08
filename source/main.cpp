@@ -252,10 +252,22 @@ The C++20 Masterclass: From Fundamentals to Advanced
 #include "derived_classes/constructors_with_inheritance.h"
 #endif
 
-#define Test2
-#define inheriting_base_constructors
+// #define Test2
+// #define inheriting_base_constructors
 #ifdef inheriting_base_constructors
 #include "derived_classes/inheriting_base_constructors.h"
+#endif
+
+//#define Test1
+//#define destructors_and_inheritance
+#ifdef destructors_and_inheritance
+#include "derived_classes/destructors_and_inheritance.h"
+#endif
+
+#define Test1
+#define reused_symbols_in_inheritance
+#ifdef reused_symbols_in_inheritance
+#include "derived_classes/reused_symbols_in_inheritance.h"
 #endif
 
 using namespace std;
