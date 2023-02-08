@@ -246,14 +246,14 @@ The C++20 Masterclass: From Fundamentals to Advanced
 #include "derived_classes/inheritance.h"
 #endif
 
-#define Test4
-#define constructors_with_inheritance
+// #define Test4
+// #define constructors_with_inheritance
 #ifdef constructors_with_inheritance
 #include "derived_classes/constructors_with_inheritance.h"
 #endif
 
-//#define Test4
-//#define inheriting_base_constructors
+#define Test2
+#define inheriting_base_constructors
 #ifdef inheriting_base_constructors
 #include "derived_classes/inheriting_base_constructors.h"
 #endif

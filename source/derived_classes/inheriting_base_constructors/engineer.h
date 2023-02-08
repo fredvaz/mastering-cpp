@@ -14,68 +14,43 @@ General Notes:
 #ifndef ENGINEER_H
 #define ENGINEER_H
 
-#define Test4
-#define Test5
-
 #include "person.h"
 
-// Engineer is doing private inheritance
-// Makes Public and protected members from Base class Private to the outside of the Derivated class
-
-#ifndef Test5
-class Engineer : private Person
-#endif
-#ifdef Test5
-
+// Engineer is doing public inheritance
 class Engineer : public Person
-
-#endif
 {
-private:
-    int contract_count{0};
+    friend std::ostream &operator<<(std::ostream &out, const Engineer &operand);
+
+    // Inheriting constructors adds a level of confusion to your code, it's not clear which
+    // constructor is building your object. It is recommend to avoid them and only use this 
+    // feature if not other option is available
+
+    // This will going inherit the constructors from Person class : Inheriting constructors
+    using Person::Person;
 
 public:
-    Engineer();
-    // Test6 : Constructor used to be used as Custom Constructors with Inheritance
-    Engineer(std::string_view fullname, int age, std::string_view address, int contract_count_param);
-    // Test Case 7 : Set up our own Copy Constructor with Inheritance
-    Engineer(const Engineer &source);
+    //Engineer();
+#ifdef Test3
+    Engineer(std::string_view fullname, int age, std::string_view address, int contract_count);
+#endif
+    //Engineer(const Engineer& source); // Copy constructors are not inheritable
     ~Engineer();
 
     void build_something()
     {
-        m_full_name = "John Snow"; // OK : Inherited as Private from Person Class where is Public member
-        m_age = 23;                // OK : Inherited as Private member from Person Class where is also Protected
+        m_full_name = "John Snow";
+        m_age = 23;               
         //m_address = "897-78-723"; // Compiler Error : Still Private member of Person Class
     }
-
-    // A friend function can have a acess in the same way
-    friend std::ostream &operator<<(std::ostream &out, const Engineer &operand);
-
-#ifdef Test4
-    // Private members : Resurecting members back in context
 
     int get_contract_count() const
     {
         return contract_count;
     }
 
-#ifndef Test5
+private:
+    int contract_count{0};
 
-protected:
-    // Here the using keyword get the initial properties of the Base class Person
-    using Person::get_address;   // OK : Public member of Base class Person
-    using Person::get_age;       // OK : Public member of Base class Person
-    using Person::get_full_name; // OK : Public member of Base class Person
-    using Person::m_full_name;   // OK : Public member of Base class Person
-    //using Person::m_address;   // Compiler Error : Still a Private member of Base class Person
-
-public:
-    using Person::add; // It will give access to the two overload functions
-    using Person::do_something;
-
-#endif
-#endif
 };
 
 #endif // ENGINEER_H

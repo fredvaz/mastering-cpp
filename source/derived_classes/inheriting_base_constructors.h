@@ -1,6 +1,6 @@
 /*
 
-The C++20 Masterclass: Derived classes / Classes Inheritance 
+The C++20 Masterclass: Derived classes / Inheriting Base Constructors
 
 General Notes:
         Any class type (whether declared with class-key class or struct) may be declared
@@ -14,12 +14,8 @@ General Notes:
 
 */
 #include <iostream>
-#include "player.cpp"
-#include "nurse.cpp"
-#include "engineer.cpp"
-#include "civilengineer.cpp"
-
-//#define Test1
+#include "inheriting_base_constructors/person.cpp"
+#include "inheriting_base_constructors/engineer.cpp"
 
 using namespace std;
 
@@ -27,14 +23,14 @@ using namespace std;
 void test1()
 {
     /*
-    Notes: Private members : Player Class cannot acess the private members of Class Person
+    Notes:  #define Test1
+
+            Default Case : Inheriting Default Base Constructor
     */
+    Engineer eng1; // Default Constructor call
 
-    Player p1("Basketball");
-    p1.set_first_name("Frederico");
-    p1.set_last_name("Vaz");
+    cout << "eng1 : " << eng1 << endl;
 
-    cout << "player : " << p1 << endl;
 }
 #endif
 
@@ -42,16 +38,17 @@ void test1()
 void test2()
 {
     /*
-    Notes: Protected members : Only Player Class can acess the private members of Class Person
+    Notes:  #define Test2
+
+            Test Case : Inheriting Custom Person Base Constructor
     */
+    Engineer eng1("Daniel Gray", 23, "Coimbra PT"); // It will call Custom Person Constructor inherited
+                                                    // and with the Engineer member variables
 
-    Player p1("Basketball", "Frederico", "Vaz");
-    // Now we don't need acess ther member variables using the methods functions because
-    // the Player casses has protected access to he member variable of the Person Class
-    cout << "player : " << p1 << endl;
+    cout << "eng1 : " << eng1 << endl;
 
-    // Still we cannot direct acess externally the private members of the Base Class Person
-    //p1.first_name = "Daniel"; // Compiler Error
+    // Another Test Case: Compiler Error this Constructor is not declared in Person neither in Engineer Class
+    //Engineer eng2("Daniel Gray", 23, "Coimbra PT", 4); 
 }
 #endif
 
@@ -59,143 +56,12 @@ void test2()
 void test3()
 {
     /*
-    Notes: Private members : Base class access specifiers
+    Notes: #define Test3
+           
+           Test Case : Uses the Custom Engineer Constructor 
     */
-    Person person1("Daniel Gray", 27, "Blue Sky St 233 #56");
-    cout << "person1 : " << person1 << endl;
+    Engineer eng1("Daniel Gray", 23, "Coimbra PT", 4); // It will call Custom Engineer Constructor
 
-    person1.m_full_name;
-    //person1.m_age; // Compiler Error : Protected member CANNOT be acessed outside of the Base Class
-
-    /* -------------------------------------------------------------------------------*/
-    // Player class will do public inheritance
-
-    Player player;
-
-    player.m_full_name = "Samuel Jackson"; // Public member of the Derivated class
-    //player.m_age = 55; // Compiler error : Protected member is acessible inside the Derivated Class
-    // but not from outisde of the class
-    //player.m_address = "2i892317322"; // Compiler : Private member is neither acessible
-    // inside the derivated class or Outside of the Class
-
-    /* -------------------------------------------------------------------------------*/
-    // Nurse class will do protected inheritance
-
-    Nurse nurse1;
-
-    //nurse1.m_full_name = "Davy Johnes"; // Compiler error : Now is Protected member in the Derivated class
-    //nurse1.m_age = 51; // Compiler error : Still Protected member
-
-    /* -------------------------------------------------------------------------------*/
-    // Engineer class is doing private inheritance
-
-    Engineer engineer1;
-
-    //engineer1.m_full_name = "Olivier Godson"; // Compiler error : Now is Private member in the Derivated class
-    //engineer1.m_age = 55; // Compiler error : Now is Private member in the Derivated class
-    //engineer1.m_address = "dsakfd;aslfjd;laskf"; // Compiler error : Still Private member
-
-    /* -------------------------------------------------------------------------------*/
-    // 403 : Closing in on Private Inheritance
-
-    // CivilEngineer class is doing private inheritance from Engineer class
-    // But the Engineer class is already private inheritance, so, it will selfish
-
-    CivilEngineer civilengineer1;
-
-    //engineer1.m_full_name = "Olivier Godson"; // Compiler error : Already Private member in the Base Class
-}
-#endif
-
-
-#ifdef Test4
-void test4()
-{
-    /*
-    Notes: Private members : Resurecting members back in context
-    */
-}
-#endif
-
-#ifdef Test5
-void test5()
-{
-    /*
-    Notes: Private members : Default Constructors with Inheritance
-
-           Constructors called order : Person -> Engineer -> CivilEngineer
-
-           Starts froms the most basic going down to the most specialized one
-    */
-    CivilEngineer ce1;
-
-    cout << "Hello!" << endl;
-}
-#endif
-
-#define Test6
-#ifdef Test6
-void test6()
-{
-    /*
-    Notes: Private members : Custom Constructors with Inheritance
-
-           Constructors parameters forward from the Derivated to Base class
-
-           Use of the initializer lists with Constructors whose job is going to be to 
-           initialize these member varaibles
-    */
-    cout << "----------------------------------------" << endl;
-
-    Person person1("John Snow", 27, "Winterfell Cold 33St#75");
-    cout << "person1 : " << person1 << endl;
-
-    cout << "----------------------------------------" << endl;
-
-    Engineer engineer1("John Snow", 27, "Winterfell Cold 33St#75", 12);
-    cout << "person1 : " << engineer1 << endl;
-
-    cout << "----------------------------------------" << endl;
-
-    CivilEngineer civilengineer1("John Snow", 27, "Winterfell Cold 33St#75", 12, "Bridges");
-    cout << "person1 : " << civilengineer1 << endl;
-
-    cout << "----------------------------------------" << endl;
-}
-#endif
-
-#define Test7
-#ifdef Test7
-void test7()
-{
-    /*
-    Notes: Private members : Copy Constructors with Inheritance
-
-           Constructors parameters copy from a class Object another Object of the same type
-    */
-    cout << "----------------------------------------" << endl;
-
-    // Engineer eng1("Daniel Gray", 41, "Green Sky Oh Blue 33st#75", 12);
-
-    //  cout << "----------------------------------------" << endl;
-    // // By Default the Compiler accepts this operation:
-    // // Is going take out the contract count from engineer one an copy that into engineer to
-    // Engineer eng2(eng1);
-
-    // cout << "eng2 : " << eng2 << endl;
-
-    cout << "----------------------------------------" << endl;
-
-    CivilEngineer eng1("Daniel Gray", 41, "Green Sky Oh Blue 33st#75", 12, "Bridges");
-
-    cout << "eng2 : " << eng1 << endl;
-
-    cout << "----------------------------------------" << endl;
-
-    CivilEngineer eng2(eng1);
-
-    cout << "eng2 : " << eng2 << endl;
-
-    cout << "----------------------------------------" << endl;
+    cout << "eng1 : " << eng1 << endl;
 }
 #endif
