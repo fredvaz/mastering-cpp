@@ -79,12 +79,3 @@ void test1()
     cout << "result1: " << result1 << endl;
 }
 #endif
-
-#ifdef Test2
-void test2()
-{
-    /*
-    Notes:
-    */
-}
-#endif

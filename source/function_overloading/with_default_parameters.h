@@ -37,12 +37,3 @@ void test1()
     print_age(age);
 }
 #endif
-
-#ifdef Test2
-void test2()
-{
-    /*
-    Notes:
-    */
-}
-#endif

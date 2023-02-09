@@ -67,12 +67,3 @@ void test1()
     auto result1 = min(p_c, p_d);
 }
 #endif
-
-#ifdef Test2
-void test2()
-{
-    /*
-    Notes:
-    */
-}
-#endif
