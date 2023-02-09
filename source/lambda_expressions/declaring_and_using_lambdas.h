@@ -1,13 +1,14 @@
 /*
 
-The C++20 Masterclass: Lambda Functions
+The C++20 Masterclass: Lambda Expressions
 
-General Notes from cppreference.com:
-    In C++11, Constructs a closure: an unnamed function object capable of capturing variables in scope.
-    From the slides:
+General Notes:
+        In C++11, Constructs a closure: an unnamed function object capable of capturing variables in scope.
+        From the slides:
         A mechanism to set up anonymous functions (whiout names). Once we have them set up, we can
         either give them names and call them, or we can even get them to do things directly
 
+   [REF]: https://en.cppreference.com/w/cpp/language/lambda
 */
 
 #include <iostream>

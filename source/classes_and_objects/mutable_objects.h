@@ -9,6 +9,7 @@ General Notes:
    
 */
 #include <iostream>
+#include "dog_aux.cpp"
 
 using namespace std;
 
@@ -18,10 +19,18 @@ void test1()
     /*
     Notes:  #define Test1
 
-            Test Case: 
+            Default Case: 
     */
     cout << "--------------------------------------------------------------------------------" << endl;
 
+    Dog dog1("Rex", "Shepherd", 3);
+    dog1.print_info();
+
+    for (size_t i = 0; i < 5; i++)
+    {
+        dog1.print_info();
+    }
+    
     cout << "--------------------------------------------------------------------------------" << endl;
 }
 #endif

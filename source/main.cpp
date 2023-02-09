@@ -264,11 +264,42 @@ The C++20 Masterclass: From Fundamentals to Advanced
 #include "derived_classes/destructors_and_inheritance.h"
 #endif
 
-#define Test1
-#define reused_symbols_in_inheritance
+// #define Test1
+// #define reused_symbols_in_inheritance
 #ifdef reused_symbols_in_inheritance
 #include "derived_classes/reused_symbols_in_inheritance.h"
 #endif
+
+// #define Test5
+// #define const_objects
+#ifdef const_objects
+#include "classes_and_objects/const_objects.h"
+#endif
+
+// #define Test1
+// #define getters_as_setters
+#ifdef getters_as_setters
+#include "classes_and_objects/getters_as_setters.h"
+#endif
+
+// #define Test2
+// #define dangling_references_pointers
+#ifdef dangling_references_pointers
+#include "classes_and_objects/dangling_references_pointers.h"
+#endif
+
+// #define Test1
+// #define mutable_objects
+#ifdef mutable_objects
+#include "classes_and_objects/mutable_objects.h"
+#endif
+
+#define Test1
+#define structured_bindings
+#ifdef structured_bindings
+#include "classes_and_objects/structured_bindings.h"
+#endif
+
 
 using namespace std;
 
