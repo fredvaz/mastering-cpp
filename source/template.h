@@ -34,7 +34,7 @@ int main()
     return 0;
 }
 
-#endif // Test Case END
+#endif // TEST_CASE_1 END
 
 //
 
