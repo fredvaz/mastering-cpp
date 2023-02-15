@@ -1,0 +1,12 @@
+[
+{
+  "directory": "/home/fredvaz/mastering_cpp/CMake/3_Intermediate_Project/build/src/my_lib",
+  "command": "/usr/bin/g++   -I/home/fredvaz/mastering_cpp/CMake/3_Intermediate_Project/src/my_lib/.  -g   -o CMakeFiles/Library.dir/my_lib.cc.o -c /home/fredvaz/mastering_cpp/CMake/3_Intermediate_Project/src/my_lib/my_lib.cc",
+  "file": "/home/fredvaz/mastering_cpp/CMake/3_Intermediate_Project/src/my_lib/my_lib.cc"
+},
+{
+  "directory": "/home/fredvaz/mastering_cpp/CMake/3_Intermediate_Project/build/app",
+  "command": "/usr/bin/g++   -I/home/fredvaz/mastering_cpp/CMake/3_Intermediate_Project/src/my_lib/.  -g   -o CMakeFiles/Executable.dir/main.cc.o -c /home/fredvaz/mastering_cpp/CMake/3_Intermediate_Project/app/main.cc",
+  "file": "/home/fredvaz/mastering_cpp/CMake/3_Intermediate_Project/app/main.cc"
+}
+]
