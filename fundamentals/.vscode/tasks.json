@@ -8,11 +8,11 @@
 			"args": [
 				"-g",
 				"-std=c++20",
-				//"C:\\Dev\\masterclass_cpp20\\source\\*.cpp",
+				//"C:\\Dev\\masterclass_cpp20\\fundamentals\\*.cpp",
 				//"${workspaceFolder}\\*.cpp",
 				"${fileDirname}\\*.cpp",
 				"-o",
-				"C:\\Dev\\masterclass_cpp20\\source\\main.exe"
+				"C:\\Dev\\mastering_cpp\\fundamentals\\main.exe"
 				//"${fileDirname}\\zeta.exe"
 			],
 			"options": {

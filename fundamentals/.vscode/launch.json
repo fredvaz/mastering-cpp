@@ -8,7 +8,7 @@
             "name": "g++.exe - Build and debug active file",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${fileDirname}\\main.exe",
+            "program": "${workspaceFolder}\\main.exe", // workspaceFolder fileDirname
             "args": [],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
@@ -28,10 +28,10 @@
             "name": "C/C++: cl.exe build and debug active file",
             "type": "cppvsdbg",
             "request": "launch",
-            "program": "${fileDirname}\\main.exe",
+            "program": "${workspaceFolder}\\main.exe", // workspaceFolder fileDirname
             "args": [],
             "stopAtEntry": false,
-            "cwd": "${workspaceFolder}",
+            "cwd": "${fileDirname}",
             "environment": [],
             "console": "externalTerminal",
             "preLaunchTask": "Build with MSVC"
