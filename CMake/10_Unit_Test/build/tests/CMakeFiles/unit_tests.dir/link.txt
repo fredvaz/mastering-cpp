@@ -1,1 +1,0 @@
-/usr/bin/g++  -g   CMakeFiles/unit_tests.dir/main.cc.o  -o unit_tests  ../src/my_lib/libLibrary.a ../_deps/fmt-build/libfmtd.a ../_deps/spdlog-build/libspdlogd.a -lpthread 

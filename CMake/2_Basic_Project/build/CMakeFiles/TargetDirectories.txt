@@ -1,4 +1,0 @@
-/home/fredvaz/mastering_cpp/CMake/2_Basic_Project/build/CMakeFiles/edit_cache.dir
-/home/fredvaz/mastering_cpp/CMake/2_Basic_Project/build/CMakeFiles/rebuild_cache.dir
-/home/fredvaz/mastering_cpp/CMake/2_Basic_Project/build/CMakeFiles/Executable.dir
-/home/fredvaz/mastering_cpp/CMake/2_Basic_Project/build/CMakeFiles/Library.dir

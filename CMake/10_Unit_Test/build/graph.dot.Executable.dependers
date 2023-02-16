@@ -1,6 +1,0 @@
-digraph "GG" {
-node [
-  fontsize = "12"
-];
-    "node33" [ label="Executable" shape="house"];
-}

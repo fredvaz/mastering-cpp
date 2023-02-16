@@ -1,1 +1,0 @@
-/usr/bin/g++  -g   CMakeFiles/Executable.dir/main.cc.o  -o Executable  ../src/my_lib/libLibrary.a ../_deps/fmt-build/libfmtd.a ../_deps/spdlog-build/libspdlogd.a -lpthread 

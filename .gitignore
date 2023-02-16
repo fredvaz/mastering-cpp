@@ -30,3 +30,9 @@
 *.exe
 *.out
 *.app
+
+# FOLDERS
+build/
+html/
+linalg/
+loguru/

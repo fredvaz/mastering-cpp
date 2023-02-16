@@ -1,3 +1,0 @@
-/home/fredvaz/mastering_cpp/CMake/9_Doxygen/build/_deps/spdlog-subbuild/CMakeFiles/rebuild_cache.dir
-/home/fredvaz/mastering_cpp/CMake/9_Doxygen/build/_deps/spdlog-subbuild/CMakeFiles/edit_cache.dir
-/home/fredvaz/mastering_cpp/CMake/9_Doxygen/build/_deps/spdlog-subbuild/CMakeFiles/spdlog-populate.dir

@@ -1,3 +1,0 @@
-/home/fredvaz/mastering_cpp/CMake/1_Hello_World/build/CMakeFiles/edit_cache.dir
-/home/fredvaz/mastering_cpp/CMake/1_Hello_World/build/CMakeFiles/rebuild_cache.dir
-/home/fredvaz/mastering_cpp/CMake/1_Hello_World/build/CMakeFiles/Executable.dir
