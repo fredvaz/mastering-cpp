@@ -1,0 +1,6 @@
+digraph "GG" {
+node [
+  fontsize = "12"
+];
+    "node4" [ label="nlohmann_json" shape="box"];
+}

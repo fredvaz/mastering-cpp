@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/fredvaz/mastering_cpp/CMake/10_Unit_Test/build/_deps/spdlog-subbuild/CMakeFiles/spdlog-populate"
+		},
+		{
+			"file" : "/home/fredvaz/mastering_cpp/CMake/10_Unit_Test/build/_deps/spdlog-subbuild/CMakeFiles/spdlog-populate.rule"
+		},
+		{
+			"file" : "/home/fredvaz/mastering_cpp/CMake/10_Unit_Test/build/_deps/spdlog-subbuild/CMakeFiles/spdlog-populate-complete.rule"
+		},
+		{
+			"file" : "/home/fredvaz/mastering_cpp/CMake/10_Unit_Test/build/_deps/spdlog-subbuild/spdlog-populate-prefix/src/spdlog-populate-stamp/spdlog-populate-install.rule"
+		},
+		{
+			"file" : "/home/fredvaz/mastering_cpp/CMake/10_Unit_Test/build/_deps/spdlog-subbuild/spdlog-populate-prefix/src/spdlog-populate-stamp/spdlog-populate-mkdir.rule"
+		},
+		{
+			"file" : "/home/fredvaz/mastering_cpp/CMake/10_Unit_Test/build/_deps/spdlog-subbuild/spdlog-populate-prefix/src/spdlog-populate-stamp/spdlog-populate-download.rule"
+		},
+		{
+			"file" : "/home/fredvaz/mastering_cpp/CMake/10_Unit_Test/build/_deps/spdlog-subbuild/spdlog-populate-prefix/src/spdlog-populate-stamp/spdlog-populate-update.rule"
+		},
+		{
+			"file" : "/home/fredvaz/mastering_cpp/CMake/10_Unit_Test/build/_deps/spdlog-subbuild/spdlog-populate-prefix/src/spdlog-populate-stamp/spdlog-populate-patch.rule"
+		},
+		{
+			"file" : "/home/fredvaz/mastering_cpp/CMake/10_Unit_Test/build/_deps/spdlog-subbuild/spdlog-populate-prefix/src/spdlog-populate-stamp/spdlog-populate-configure.rule"
+		},
+		{
+			"file" : "/home/fredvaz/mastering_cpp/CMake/10_Unit_Test/build/_deps/spdlog-subbuild/spdlog-populate-prefix/src/spdlog-populate-stamp/spdlog-populate-build.rule"
+		},
+		{
+			"file" : "/home/fredvaz/mastering_cpp/CMake/10_Unit_Test/build/_deps/spdlog-subbuild/spdlog-populate-prefix/src/spdlog-populate-stamp/spdlog-populate-test.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"spdlog-populate"
+		],
+		"name" : "spdlog-populate"
+	}
+}

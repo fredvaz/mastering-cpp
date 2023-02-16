@@ -1,0 +1,8 @@
+digraph "GG" {
+node [
+  fontsize = "12"
+];
+    "node21" [ label="Catch2" shape="box"];
+    "node36" [ label="unit_tests" shape="house"];
+    "node36" -> "node21" // Catch2 -> unit_tests
+}

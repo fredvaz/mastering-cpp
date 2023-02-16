@@ -1,0 +1,321 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4,
+						6,
+						7,
+						8,
+						9,
+						11,
+						12
+					],
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"build" : "_deps/nlohmann_json-build",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.1"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "build/_deps/nlohmann_json-src"
+				},
+				{
+					"build" : "_deps/fmt-build",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.1"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 2,
+					"source" : "build/_deps/fmt-src",
+					"targetIndexes" : 
+					[
+						3
+					]
+				},
+				{
+					"build" : "_deps/spdlog-build",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 3,
+					"source" : "build/_deps/spdlog-src",
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"build" : "_deps/cxxopts-build",
+					"childIndexes" : 
+					[
+						5
+					],
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.1"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 4,
+					"source" : "build/_deps/cxxopts-src"
+				},
+				{
+					"build" : "_deps/cxxopts-build/include",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.1"
+					},
+					"parentIndex" : 4,
+					"projectIndex" : 4,
+					"source" : "build/_deps/cxxopts-src/include"
+				},
+				{
+					"build" : "_deps/catch2-build",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 5,
+					"source" : "build/_deps/catch2-src"
+				},
+				{
+					"build" : "configured",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "configured"
+				},
+				{
+					"build" : "external",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "external"
+				},
+				{
+					"build" : "src",
+					"childIndexes" : 
+					[
+						10
+					],
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "src"
+				},
+				{
+					"build" : "src/my_lib",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"parentIndex" : 9,
+					"projectIndex" : 0,
+					"source" : "src/my_lib",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "app",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "app",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "tests",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "tests",
+					"targetIndexes" : 
+					[
+						5
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4,
+						5
+					],
+					"directoryIndexes" : 
+					[
+						0,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12
+					],
+					"name" : "CppProjectTemplate",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						5
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "nlohmann_json",
+					"parentIndex" : 0
+				},
+				{
+					"directoryIndexes" : 
+					[
+						2
+					],
+					"name" : "FMT",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						3
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						3
+					],
+					"name" : "spdlog",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						4,
+						5
+					],
+					"name" : "cxxopts",
+					"parentIndex" : 0
+				},
+				{
+					"directoryIndexes" : 
+					[
+						6
+					],
+					"name" : "Catch2",
+					"parentIndex" : 0
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 11,
+					"id" : "Executable::@5f5a17c01335469806cb",
+					"jsonFile" : "target-Executable-Debug-595b895d722e5e16510c.json",
+					"name" : "Executable",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 10,
+					"id" : "Library::@c75f2be49bb1c1e936f4",
+					"jsonFile" : "target-Library-Debug-1c2a4005c1acedfadfec.json",
+					"name" : "Library",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "docs::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-docs-Debug-bd8482457d2e862d4a04.json",
+					"name" : "docs",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "fmt::@976f4f0bee90b99ecdb6",
+					"jsonFile" : "target-fmt-Debug-728c9f904bc3ba049e32.json",
+					"name" : "fmt",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "spdlog::@eb35cfce7893ccfeff1e",
+					"jsonFile" : "target-spdlog-Debug-90564ec7c43cef3ff79b.json",
+					"name" : "spdlog",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 12,
+					"id" : "unit_tests::@a44f0ac069e85531cdee",
+					"jsonFile" : "target-unit_tests-Debug-71097072b7f699b9ba97.json",
+					"name" : "unit_tests",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/fredvaz/mastering_cpp/CMake/10_Unit_Test/build",
+		"source" : "/home/fredvaz/mastering_cpp/CMake/10_Unit_Test"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 0
+	}
+}

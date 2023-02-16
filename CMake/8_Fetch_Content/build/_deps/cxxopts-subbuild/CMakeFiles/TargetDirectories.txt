@@ -1,0 +1,3 @@
+/home/fredvaz/mastering_cpp/CMake/8_Fetch_Content/build/_deps/cxxopts-subbuild/CMakeFiles/rebuild_cache.dir
+/home/fredvaz/mastering_cpp/CMake/8_Fetch_Content/build/_deps/cxxopts-subbuild/CMakeFiles/edit_cache.dir
+/home/fredvaz/mastering_cpp/CMake/8_Fetch_Content/build/_deps/cxxopts-subbuild/CMakeFiles/cxxopts-populate.dir

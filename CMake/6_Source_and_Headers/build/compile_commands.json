@@ -1,0 +1,12 @@
+[
+{
+  "directory": "/home/fredvaz/mastering_cpp/CMake/6_Source_and_Headers/build/src/my_lib",
+  "command": "/usr/bin/g++   -I/home/fredvaz/mastering_cpp/CMake/6_Source_and_Headers/src/my_lib/. -I/home/fredvaz/mastering_cpp/CMake/6_Source_and_Headers/build/configured_files/include  -g   -std=c++17 -o CMakeFiles/Library.dir/my_lib.cc.o -c /home/fredvaz/mastering_cpp/CMake/6_Source_and_Headers/src/my_lib/my_lib.cc",
+  "file": "/home/fredvaz/mastering_cpp/CMake/6_Source_and_Headers/src/my_lib/my_lib.cc"
+},
+{
+  "directory": "/home/fredvaz/mastering_cpp/CMake/6_Source_and_Headers/build/app",
+  "command": "/usr/bin/g++   -I/home/fredvaz/mastering_cpp/CMake/6_Source_and_Headers/src/my_lib/. -I/home/fredvaz/mastering_cpp/CMake/6_Source_and_Headers/build/configured_files/include  -g   -std=c++17 -o CMakeFiles/Executable.dir/main.cc.o -c /home/fredvaz/mastering_cpp/CMake/6_Source_and_Headers/app/main.cc",
+  "file": "/home/fredvaz/mastering_cpp/CMake/6_Source_and_Headers/app/main.cc"
+}
+]

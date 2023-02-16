@@ -1,0 +1,3 @@
+/home/fredvaz/mastering_cpp/CMake/10_Unit_Test/build/_deps/spdlog-subbuild/CMakeFiles/rebuild_cache.dir
+/home/fredvaz/mastering_cpp/CMake/10_Unit_Test/build/_deps/spdlog-subbuild/CMakeFiles/edit_cache.dir
+/home/fredvaz/mastering_cpp/CMake/10_Unit_Test/build/_deps/spdlog-subbuild/CMakeFiles/spdlog-populate.dir

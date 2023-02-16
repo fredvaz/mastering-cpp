@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/fredvaz/mastering_cpp/CMake/8_Fetch_Content/build/_deps/cxxopts-subbuild/CMakeFiles/cxxopts-populate"
+		},
+		{
+			"file" : "/home/fredvaz/mastering_cpp/CMake/8_Fetch_Content/build/_deps/cxxopts-subbuild/CMakeFiles/cxxopts-populate.rule"
+		},
+		{
+			"file" : "/home/fredvaz/mastering_cpp/CMake/8_Fetch_Content/build/_deps/cxxopts-subbuild/CMakeFiles/cxxopts-populate-complete.rule"
+		},
+		{
+			"file" : "/home/fredvaz/mastering_cpp/CMake/8_Fetch_Content/build/_deps/cxxopts-subbuild/cxxopts-populate-prefix/src/cxxopts-populate-stamp/cxxopts-populate-install.rule"
+		},
+		{
+			"file" : "/home/fredvaz/mastering_cpp/CMake/8_Fetch_Content/build/_deps/cxxopts-subbuild/cxxopts-populate-prefix/src/cxxopts-populate-stamp/cxxopts-populate-mkdir.rule"
+		},
+		{
+			"file" : "/home/fredvaz/mastering_cpp/CMake/8_Fetch_Content/build/_deps/cxxopts-subbuild/cxxopts-populate-prefix/src/cxxopts-populate-stamp/cxxopts-populate-download.rule"
+		},
+		{
+			"file" : "/home/fredvaz/mastering_cpp/CMake/8_Fetch_Content/build/_deps/cxxopts-subbuild/cxxopts-populate-prefix/src/cxxopts-populate-stamp/cxxopts-populate-update.rule"
+		},
+		{
+			"file" : "/home/fredvaz/mastering_cpp/CMake/8_Fetch_Content/build/_deps/cxxopts-subbuild/cxxopts-populate-prefix/src/cxxopts-populate-stamp/cxxopts-populate-patch.rule"
+		},
+		{
+			"file" : "/home/fredvaz/mastering_cpp/CMake/8_Fetch_Content/build/_deps/cxxopts-subbuild/cxxopts-populate-prefix/src/cxxopts-populate-stamp/cxxopts-populate-configure.rule"
+		},
+		{
+			"file" : "/home/fredvaz/mastering_cpp/CMake/8_Fetch_Content/build/_deps/cxxopts-subbuild/cxxopts-populate-prefix/src/cxxopts-populate-stamp/cxxopts-populate-build.rule"
+		},
+		{
+			"file" : "/home/fredvaz/mastering_cpp/CMake/8_Fetch_Content/build/_deps/cxxopts-subbuild/cxxopts-populate-prefix/src/cxxopts-populate-stamp/cxxopts-populate-test.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"cxxopts-populate"
+		],
+		"name" : "cxxopts-populate"
+	}
+}

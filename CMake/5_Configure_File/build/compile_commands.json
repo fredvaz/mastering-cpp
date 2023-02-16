@@ -1,0 +1,12 @@
+[
+{
+  "directory": "/home/fredvaz/mastering_cpp/CMake/5_Configure_File/build/src/my_lib",
+  "command": "/usr/bin/g++   -I/home/fredvaz/mastering_cpp/CMake/5_Configure_File/src/my_lib/. -I/home/fredvaz/mastering_cpp/CMake/5_Configure_File/build/configured_files/include  -g   -std=c++17 -o CMakeFiles/Library.dir/my_lib.cc.o -c /home/fredvaz/mastering_cpp/CMake/5_Configure_File/src/my_lib/my_lib.cc",
+  "file": "/home/fredvaz/mastering_cpp/CMake/5_Configure_File/src/my_lib/my_lib.cc"
+},
+{
+  "directory": "/home/fredvaz/mastering_cpp/CMake/5_Configure_File/build/app",
+  "command": "/usr/bin/g++   -I/home/fredvaz/mastering_cpp/CMake/5_Configure_File/src/my_lib/. -I/home/fredvaz/mastering_cpp/CMake/5_Configure_File/build/configured_files/include  -g   -std=c++17 -o CMakeFiles/Executable.dir/main.cc.o -c /home/fredvaz/mastering_cpp/CMake/5_Configure_File/app/main.cc",
+  "file": "/home/fredvaz/mastering_cpp/CMake/5_Configure_File/app/main.cc"
+}
+]

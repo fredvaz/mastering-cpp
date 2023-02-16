@@ -1,0 +1,12 @@
+digraph "GG" {
+node [
+  fontsize = "12"
+];
+    "node16" [ label="cxxopts" shape="box"];
+    "node30" [ label="Library" shape="diamond"];
+    "node30" -> "node16" // cxxopts -> Library
+    "node33" [ label="Executable" shape="house"];
+    "node33" -> "node30" // Library -> Executable
+    "node36" [ label="unit_tests" shape="house"];
+    "node36" -> "node30" // Library -> unit_tests
+}

@@ -1,0 +1,8 @@
+digraph "GG" {
+node [
+  fontsize = "12"
+];
+    "node4" [ label="nlohmann_json" shape="box"];
+    "node16" [ label="Executable" shape="house"];
+    "node16" -> "node4" // nlohmann_json -> Executable
+}

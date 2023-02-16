@@ -1,0 +1,16 @@
+/home/fredvaz/mastering_cpp/CMake/7_External_Libraries_Git/build/CMakeFiles/rebuild_cache.dir
+/home/fredvaz/mastering_cpp/CMake/7_External_Libraries_Git/build/CMakeFiles/edit_cache.dir
+/home/fredvaz/mastering_cpp/CMake/7_External_Libraries_Git/build/external/json/CMakeFiles/edit_cache.dir
+/home/fredvaz/mastering_cpp/CMake/7_External_Libraries_Git/build/external/json/CMakeFiles/rebuild_cache.dir
+/home/fredvaz/mastering_cpp/CMake/7_External_Libraries_Git/build/configured/CMakeFiles/rebuild_cache.dir
+/home/fredvaz/mastering_cpp/CMake/7_External_Libraries_Git/build/configured/CMakeFiles/edit_cache.dir
+/home/fredvaz/mastering_cpp/CMake/7_External_Libraries_Git/build/external/CMakeFiles/rebuild_cache.dir
+/home/fredvaz/mastering_cpp/CMake/7_External_Libraries_Git/build/external/CMakeFiles/edit_cache.dir
+/home/fredvaz/mastering_cpp/CMake/7_External_Libraries_Git/build/src/CMakeFiles/rebuild_cache.dir
+/home/fredvaz/mastering_cpp/CMake/7_External_Libraries_Git/build/src/CMakeFiles/edit_cache.dir
+/home/fredvaz/mastering_cpp/CMake/7_External_Libraries_Git/build/src/my_lib/CMakeFiles/rebuild_cache.dir
+/home/fredvaz/mastering_cpp/CMake/7_External_Libraries_Git/build/src/my_lib/CMakeFiles/edit_cache.dir
+/home/fredvaz/mastering_cpp/CMake/7_External_Libraries_Git/build/src/my_lib/CMakeFiles/Library.dir
+/home/fredvaz/mastering_cpp/CMake/7_External_Libraries_Git/build/app/CMakeFiles/edit_cache.dir
+/home/fredvaz/mastering_cpp/CMake/7_External_Libraries_Git/build/app/CMakeFiles/rebuild_cache.dir
+/home/fredvaz/mastering_cpp/CMake/7_External_Libraries_Git/build/app/CMakeFiles/Executable.dir
