@@ -36,3 +36,4 @@ build/
 html/
 linalg/
 loguru/
+vcpkg/
