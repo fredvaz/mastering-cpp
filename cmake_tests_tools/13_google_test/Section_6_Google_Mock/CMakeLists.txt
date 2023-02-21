@@ -20,8 +20,9 @@ endif()
 
 add_library(database_connection_library IDatabaseConnection.cpp)
 add_library(employee_manager_library EmployeeManager.cpp)
+add_library(library_code LibraryCode.cpp)
 
-set(MY_LIBRARIES database_connection_library employee_manager_library)
+set(MY_LIBRARIES database_connection_library employee_manager_library library_code)
 
 add_executable(main_app main.cpp)
 target_link_libraries(main_app ${MY_LIBRARIES})

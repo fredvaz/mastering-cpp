@@ -2,6 +2,7 @@
 
 #include <string>
 #include <vector>
+#include <functional>
 
 #include "Employee.hpp"
 
@@ -10,6 +11,8 @@
 class IDatabaseConnection
 {
 public:
+  using Callback = std::function<void(int, int)>; // Lecture 53: Callbacks
+  
   IDatabaseConnection(std::string serverAddress);
   
 
@@ -22,6 +25,17 @@ public:
   virtual void connect();
   virtual void disconnect();
 
+  // Lecture 53: Callbacks
+  void setOnConnect(Callback onConnect);
+
+  // Lecture 54
+// private:
+//   virtual void onConnect()
+//   {
+
+//   }
+
 protected:
   std::string mServerAddress;
+  Callback mOnConnect; // Lecture 53: Callbacks
 };
