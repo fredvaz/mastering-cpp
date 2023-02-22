@@ -6,16 +6,11 @@
 
 #include "Employee.hpp"
 
-//
-
-// interface because we might subclass it
-// example: IOracleDatabaseConnectionManager, ISQLDatabaseConnectionManager
+//interface because we might subclass it
+//example: IOracleDatabaseConnectionManager, ISQLDatabaseConnectionManager
 class IDatabaseConnection
 {
 public:
-  // using Callback = std::function<void()>; // Lecture 53: Callbacks
-  using Callback = std::function<void(int, int)>; 
-  
   IDatabaseConnection(std::string serverAddress);
   
   virtual float getSalary(int id) const = 0; // SELECT * FROM employees WHERE id=...
@@ -27,11 +22,7 @@ public:
   virtual void connect();
   virtual void disconnect();
 
-  // Lecture 53: Callbacks
-  void setOnConnect(Callback onConnect);
-
 protected:
   std::string mServerAddress;
-  Callback mOnConnect; // Lecture 53: Callbacks
 
 };

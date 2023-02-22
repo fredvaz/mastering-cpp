@@ -10,8 +10,6 @@
 #include "Employee.hpp"
 #include "EmployeeManager.hpp"
 
-#include "LibraryCode.hpp"
-
 // Using Google Mock
 
 // #define LEGACY_CODE
@@ -19,8 +17,6 @@
 class MockDatabaseConnection : public IDatabaseConnection // Mocked Class derived from the Super Class
 {
 public:
-    using Callback = testing::MockFunction<void(int, int)>;
-
     MockDatabaseConnection(std::string serverAddress);
 
 #ifndef LEGACY_CODE
@@ -33,7 +29,6 @@ public:
 
     MOCK_METHOD(std::vector<Employee>, getSalariesRange, (float), (const));
     MOCK_METHOD(std::vector<Employee>, getSalariesRange, (float, float), (const));
-    // MOCK_METHOD(void, onConnect, (), (override)); // Lecture 54
 
     // MOCK_METHOD(std::map<std:string, int>, something, ());
     // NOTE: Compiler error due to std::map<std:string, int>, we must declare it like (std::map<std:string, int>)
@@ -46,7 +41,7 @@ public:
 
 #endif
 
-    // Legacy / old way of using Mock methods
+    // Lecture 45: Mocking Methods - Legacy / old way of using Mock methods
 #ifdef LEGACY_CODE
     // MOCK_METHODn, n=0, 10
     MOCK_METHOD0(connect, void()); // 0 because the method function takes no parameters
@@ -156,90 +151,10 @@ TEST(TestEmployeeManager, TestConnectionErrorInvoke)
     auto boundMethod = std::bind(&MockDatabaseConnection::someMemberMethod, &dbConnection, "Some param");
 
     // Calling as a member in the Mocked Class
-    EXPECT_CALL(dbConnection, connect()).WillOnce(testing::InvokeWithoutArgs(
-        boundMethod 
-    ));
+    EXPECT_CALL(dbConnection, connect()).WillOnce(testing::InvokeWithoutArgs(boundMethod));
 
     ASSERT_THROW(EmployeeManager employeeManager(&dbConnection), std::runtime_error);
 }
-
-// Lecture 51: Matchers (Code Example) / Shows how to check that the method was called with a certain value 
-TEST(TestEmployeeManager, TestGetSalaryInRange)
-{
-    const int low = 5000;
-    const int high = 8000;
-    std::vector<Employee> returnedVector{Employee{1, 5600, "John"},
-                                         Employee{2, 7000, "Jane"},
-                                         Employee{3, 6600, "Alex"}};
-
-    MockDatabaseConnection dbConnection("127.0.0.1");
-    EXPECT_CALL(dbConnection, connect());
-    EXPECT_CALL(dbConnection, disconnect());
-    EXPECT_CALL(dbConnection, getSalariesRange(low, high)).WillOnce(testing::Return(returnedVector));
-
-    EmployeeManager employeeManager(&dbConnection);
-
-    std::map<std::string, float> returnedMap = employeeManager.getSalariesBetween(low, high);
-
-    for (auto it = returnedMap.begin(); it != returnedMap.end(); ++it)
-    {
-        std::cout << it->first << " " << it->second << "\n";
-        // ASSERT_THAT(it->second, testing::Gt(low)); // low+1000 FAILS 
-        // First thing is the object that you are testing and then the matcher that want to test against
-        // ASSERT_THAT(it->second, testing::AllOf(testing::Gt(low), testing::Lt(high))); // Combining the matchers
-        ASSERT_THAT(it->second, testing::AnyOf(testing::Gt(low), testing::Lt(high)));   
-    }
-}
-
-// Lecture 52: Assertions on Vectors (Code Example) / Shows how to check that the method was called with a certain value 
-TEST(VecToTests, ElementAreTest)
-{
-    std::vector<int> v = generateNumbers(5, 3);
-    // 0, 1, 2, 0, 1
-
-    ASSERT_THAT(v, testing::ElementsAre(0, 1, 2, 0, 1));
-}
-
-TEST(VecToTests, RangeTest)
-{
-    using namespace testing;
-
-    std::vector<int> v = generateNumbers(5, 3);
-    // 0, 1, 2, 0, 1
-
-    ASSERT_THAT(v, Each(AllOf(Ge(0), Lt(3))));
-}
-
-
-// Lecture 53: Callbacks
-void realCallback()
-{
-    std::cout << "Real callback invoked\n";
-}
-
-TEST(TestEmployeeManager, CallbackTest)
-{
-    MockDatabaseConnection dbConnection("127.0.0.1");
-    
-    // dbConnection.setOnConnect(realCallback);
-
-    testing::MockFunction<void(int, int)> mockFunction;
-    dbConnection.setOnConnect(mockFunction.AsStdFunction());
-
-    EXPECT_CALL(mockFunction, Call(testing::_, testing::_));
-
-    dbConnection.connect();
-
-}
-
-// Lecture 54: MOcking Private and Static Methods
-// TEST(TestCallback, BasicTest)
-// {
-//     MockDatabaseConnection mdb("127.0.0.1");
-//     EXPECT_CALL(mdb, onConnect());
-//     mdb.connect();
-    
-// }
 
 //
 

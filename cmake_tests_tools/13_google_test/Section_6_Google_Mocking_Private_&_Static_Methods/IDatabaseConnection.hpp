@@ -6,14 +6,24 @@
 
 #include "Employee.hpp"
 
-//interface because we might subclass it
-//example: IOracleDatabaseConnectionManager, ISQLDatabaseConnectionManager
+//
+
+// This class is to help to manipulate the connectionCount
+class HelperClass
+{
+private:
+  virtual void increaseConnectionCount();
+  friend class IDatabaseConnection;
+};
+
+// interface because we might subclass it
+// example: IOracleDatabaseConnectionManager, ISQLDatabaseConnectionManager
 class IDatabaseConnection
 {
 public:
   using Callback = std::function<void(int, int)>; // Lecture 53: Callbacks
   
-  IDatabaseConnection(std::string serverAddress);
+  IDatabaseConnection(std::string serverAddress, HelperClass *hc); // member of the Helper Class
   
 
   virtual float getSalary(int id) const = 0; // SELECT * FROM employees WHERE id=...
@@ -28,14 +38,16 @@ public:
   // Lecture 53: Callbacks
   void setOnConnect(Callback onConnect);
 
-  // Lecture 54
-// private:
-//   virtual void onConnect()
-//   {
-
-//   }
+  // Lecture 54: Mocking Private and Static Methods
+private:
+  virtual void onConnect(){}; // Empty definition/implementation / To mock it, has to be virtual
+  static void increaseConnectionCount(); // static method
+  static unsigned connectionCount;
+  HelperClass *mHelper; // member type of the Helper Class to pass it in the in this Class
 
 protected:
   std::string mServerAddress;
-  Callback mOnConnect; // Lecture 53: Callbacks
+  // Callback mOnConnect; // Lecture 53: Callbacks
+  friend class HelperClass;
+
 };
