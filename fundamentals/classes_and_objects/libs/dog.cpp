@@ -8,7 +8,7 @@ General Notes:
    [REF]:
    
 */
-#include "dog.h"
+#include "dog.hpp"
 
 Dog::Dog(std::string_view name_param, std::string_view breed_param, unsigned int age_param)
 {

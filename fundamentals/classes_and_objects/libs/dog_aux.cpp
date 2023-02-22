@@ -8,7 +8,7 @@ General Notes:
    [REF]:
    
 */
-#include "dog_aux.h"
+#include "dog_aux.hpp"
 
 Dog::Dog(const std::string &name_param, const std::string &breed_param, unsigned int age_param)
 {
