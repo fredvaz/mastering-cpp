@@ -17,7 +17,7 @@ General Notes:
 
 //
 
-#define EXAMPLE_1
+// #define EXAMPLE_1
 #ifdef EXAMPLE_1
 /*
     Notes:  #define EXAMPLE_1
@@ -56,25 +56,40 @@ double Point::length() const
     return sqrt(pow(m_x - 0, 2) + pow(m_y - 0, 2) * 1.0);
 }
 
-inline std::ostream& operator<<(std::ostream& os, const Point& p){
+std::ostream& operator<<(std::ostream& os, const Point& p)
+{
 	os << "Point [ x : " << p.m_x << ", y : " << p.m_y << "]";	
 	return os;
 }
 
 // stream extraction operator
+std::istream& operator>>(std::istream &is, Point &p)
+{
+    double x;
+    double y;
 
+    std::cout << "Please type in the coordinates for the point" << std::endl;
+    std::cout << "order [x,y], separated by spaces: ";
+
+    is >> x >> y;
+
+    p.m_x = x;
+    p.m_y = y;
+
+    return is;
+}
 
 int main()
 {
     std::cout << "------------------------------ EXAMPLE_1 -------------------------------------" << std::endl;
 
     Point p1(5, 10);
-    point p2;
+    Point p2;
 
     // stream extraction operator
     std::cin >> p2;
 
-    std::cout << "p2: " << p2 << std::end;
+    std::cout << "p2: " << p2 << std::endl;
 
     std::cout << "------------------------------------------------------------------------------" << std::endl;
     return 0;

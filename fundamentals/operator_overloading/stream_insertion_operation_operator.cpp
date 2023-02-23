@@ -54,7 +54,7 @@ double Point::length() const
 }
 
 // Stream insertion operation operator as free function NON memmber function of the Class
-inline std::ostream &operator<<(std::ostream &os, const Point &p)
+std::ostream &operator<<(std::ostream &os, const Point &p)
 {
     os << "Point [ x : " << p.m_x << ", y : " << p.m_y << "]";
 
