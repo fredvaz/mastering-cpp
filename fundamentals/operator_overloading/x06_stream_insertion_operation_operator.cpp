@@ -1,12 +1,12 @@
 /*
 
-The C++20 Masterclass: operator overloading << stream insertion operation operator
+The C++20 Masterclass Section 38: Operator Overloading
 
 General Notes:
-        Customizes the C++ operators for operands of user-defined types.
-        if you make your operator a member function, the first operand has to be an
-        object of the class that you are doing the operator for.
-        Refer to addition operator as member
+        *Customizes the C++ operators for operands of user-defined types.
+        !if you make your operator a member function, the first operand has to be an
+        !object of the class that you are doing the operator for.
+        !Refer to addition operator as member
 
    [REF]:
     https://en.cppreference.com/w/cpp/language/operators
@@ -20,13 +20,14 @@ General Notes:
 // #define EXAMPLE_2
 #ifdef EXAMPLE_2
 /*
-    Notes:  #define EXAMPLE_2
+    !Note:  #define EXAMPLE_2
 
-            EXAMPLE: Correct Way
+            *EXAMPLE: Stream insertion operation operator : Correct Approach
 */
 
 class Point
 {
+    //* Stream insertion operation operator : Correct Approach
     friend std::ostream &operator<<(std::ostream &os, const Point &p);
 public:
     Point() = default;
@@ -41,7 +42,7 @@ public:
     }
 
 private:
-    double length() const; // Function to calculate distance from the point(0,0)
+    double length() const;
 
 private:
     double m_x{};
@@ -53,7 +54,7 @@ double Point::length() const
     return sqrt(pow(m_x - 0, 2) + pow(m_y - 0, 2) * 1.0);
 }
 
-// Stream insertion operation operator as free function NON memmber function of the Class
+//* Stream insertion operation operator as free function NON memmber function of the Class
 std::ostream &operator<<(std::ostream &os, const Point &p)
 {
     os << "Point [ x : " << p.m_x << ", y : " << p.m_y << "]";
@@ -70,7 +71,7 @@ int main()
 
     // p1.print_info();
 
-    // Stream insertion operation operator : Correct Approach
+    //* Stream insertion operation operator : Correct Approach
     std::cout << p1 << std::endl;
 
     std::cout << p1 << " " << p2 << std::endl;
@@ -87,9 +88,9 @@ int main()
 // #define EXAMPLE_1
 #ifdef EXAMPLE_1
 /*
-    Notes:  #define EXAMPLE_1
+    !Note:  #define EXAMPLE_1
 
-            EXAMPLE: Wrong way to implement it
+            *EXAMPLE: Wrong way to implement it
 */
 
 class Point
@@ -107,7 +108,7 @@ public:
         std::cout << "Point [ x : " << m_x << ", y : " << m_y << "]" << std::endl;
     }
 
-    // Stream insertion operation operator as memmber function of the Classs
+    //* Stream insertion operation operator as memmber function of the Classs
     std::ostream &operator<<(std::ostream &os)
     {
         os << "Point [ x : " << m_x << ", y : " << m_y << "]" << std::endl;
@@ -116,7 +117,7 @@ public:
     }
 
 private:
-    double length() const; // Function to calculate distance from the point(0,0)
+    double length() const;
 
 private:
     double m_x{};
@@ -136,12 +137,12 @@ int main()
 
     // p1.print_info();
 
-    // Stream insertion operation operator as memmber function of the Class
+    //* Stream insertion operation operator as memmber function of the Class
     // std::cout << p1 << std:endl;
     p1 << std::cout;
     p1.operator<<(std::cout); // the equivalent
 
-    // But this is not the best approach, see EXAMPLE_2
+    //! But this is not the best approach, see EXAMPLE_2
 
     std::cout << "------------------------------------------------------------------------------" << std::endl;
     return 0;

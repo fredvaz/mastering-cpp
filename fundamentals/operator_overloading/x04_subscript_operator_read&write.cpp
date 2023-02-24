@@ -1,12 +1,12 @@
 /*
 
-The C++20 Masterclass: operator overloading -> subscript operator [] read and write
+The C++20 Masterclass Section 38: Operator Overloading
 
 General Notes:
-        Customizes the C++ operators for operands of user-defined types.
+        *Customizes the C++ operators for operands of user-defined types.
 
         The subscript operator is a binary operator
-        The operator MUST be set up as a member function of a Class
+        !The operator MUST be set up as a member function of a Class
 
    [REF]:
     https://en.cppreference.com/w/cpp/language/operators
@@ -21,9 +21,9 @@ General Notes:
 // #define EXAMPLE_1
 #ifdef EXAMPLE_1
 /*
-    Notes:  #define EXAMPLE_1
+    !Note:  #define EXAMPLE_1
 
-            EXAMPLE: subscript operator [] read and write
+            *EXAMPLE: subscript operator [] read and write
 */
 
 class Point
@@ -35,10 +35,10 @@ public:
     }
     ~Point() = default;
 
-    // Adding a subscript operator [] overloading method to read and write
-    // return a & reference 
+    //* Adding a subscript operator [] overloading method to read and write
+    //* return a & reference 
     double &operator[](size_t index);
-    // note: the method cannot be const because, now we want the method to change the variables member
+    //! note: the method cannot be const because, now we want the method to change the variables member
 
     void print_info()
     {
@@ -46,7 +46,7 @@ public:
     }
 
 private:
-    double length() const; // Function to calculate distance from the point(0,0)
+    double length() const;
 
 private:
     double m_x{};
@@ -58,11 +58,11 @@ double Point::length() const
     return sqrt(pow(m_x - 0, 2) + pow(m_y - 0, 2) * 1.0);
 }
 
-// Adding a subscript operator [] overloading method
-// <return type> <operator keyword><symbol>(object parameter1)
+//* Adding a subscript operator [] overloading method
+//* <return type> <operator keyword><symbol>(object parameter1)
 double& Point::operator[](size_t index)
 {
-    assert((index == 0) || (index == 1)); // If the condtion not true, crashes the program at runtime
+    assert((index == 0) || (index == 1)); //! If the condtion not true, crashes the program at runtime
     return (index == 0) ? m_x : m_y; // returns the member variable as True reference / it's memory address
 }
 
@@ -76,12 +76,12 @@ int main()
     std::cout << "p1.x: " << p1[0] << std::endl; // x coordinate
     std::cout << "p1.y: " << p1[1] << std::endl; // y coordinate
 
-    // Writing data using subscript operator
+    //* Writing data using subscript operator
     p1[0] = 10.5;
     p1[1] = 10.5;
-    // p1[10] = 10.5; // Assertion `(index == 0) || (index == 1)' failed.Aborted (core dumped)
+    // p1[10] = 10.5; //! Assertion `(index == 0) || (index == 1)' failed.Aborted (core dumped)
 
-    // Reading using the subscript
+    //* Reading using the subscript
     std::cout << "p1.x: " << p1[0] << std::endl; // x coordinate
     std::cout << "p1.y: " << p1[1] << std::endl; // y coordinate
 

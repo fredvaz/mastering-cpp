@@ -1,12 +1,12 @@
 /*
 
-The C++20 Masterclass: operator overloading >> stream extraction operator
+The C++20 Masterclass Section 38: Operator Overloading
 
 General Notes:
-        Customizes the C++ operators for operands of user-defined types.
-        if you make your operator a member function, the first operand has to be an
-        object of the class that you are doing the operator for.
-        Refer to addition operator as member
+        *Customizes the C++ operators for operands of user-defined types.
+        !if you make your operator a member function, the first operand has to be an
+        !object of the class that you are doing the operator for.
+        !Refer to addition operator as member
 
    [REF]:
     https://en.cppreference.com/w/cpp/language/operators
@@ -20,16 +20,16 @@ General Notes:
 // #define EXAMPLE_1
 #ifdef EXAMPLE_1
 /*
-    Notes:  #define EXAMPLE_1
+    !Note:  #define EXAMPLE_1
 
-            EXAMPLE: 
+            *EXAMPLE: stream extraction operator
 */
 
 class Point
 {
 	friend std::ostream& operator<<(std::ostream& os, const Point& p);
 
-    // stream extraction operator
+    //* stream extraction operator
 	friend std::istream& operator>>(std::istream& is, Point& p);
 
 public:
@@ -44,7 +44,7 @@ public:
 	}
 
 private: 
-	double length() const;   // Function to calculate distance from the point(0,0)
+	double length() const;
 
 private : 
 	double m_x{}; 
@@ -62,7 +62,7 @@ std::ostream& operator<<(std::ostream& os, const Point& p)
 	return os;
 }
 
-// stream extraction operator
+//* stream extraction operator
 std::istream& operator>>(std::istream &is, Point &p)
 {
     double x;
@@ -86,7 +86,7 @@ int main()
     Point p1(5, 10);
     Point p2;
 
-    // stream extraction operator
+    //* stream extraction operator
     std::cin >> p2;
 
     std::cout << "p2: " << p2 << std::endl;
