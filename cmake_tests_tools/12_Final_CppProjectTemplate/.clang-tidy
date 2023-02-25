@@ -1,0 +1,7 @@
+---
+Checks: 'clang-analyzer-*,cppcoreguidelines-*,modernize-*,-cppcoreguidelines-avoid-magic-numbers,-cppcoreguidelines-macro-usage,-cppcoreguidelines-owning-memory,-modernize-use-nodiscard,-modernize-use-trailing-return-type'
+WarningsAsErrors: ''
+HeaderFilterRegex: '\(src|app\)\/*.\(h|hpp\)'
+AnalyzeTemporaryDtors: false
+FormatStyle:     none
+...

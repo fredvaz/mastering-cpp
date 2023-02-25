@@ -1,6 +1,6 @@
 /*
 
-The C++20 Masterclass:
+The C++20 Masterclass Section :
 
 General Notes:
 
@@ -10,27 +10,25 @@ General Notes:
 */
 #include <iostream>
 
-using namespace std;
-
 //
 
 #define EXAMPLE_1
 #ifdef EXAMPLE_1
 /*
-    Notes:  #define EXAMPLE_1
+    !Note: #define EXAMPLE_1
 
-            EXAMPLE: 
+            *EXAMPLE: 
 */
 
 //
 
 int main()
 {
-    cout << "------------------------------ EXAMPLE_1 -------------------------------------" << endl;
+    std::cout << "------------------------------ EXAMPLE_1 -------------------------------------" << std::endl;
 
-    //
+    
 
-    cout << "--------------------------------------------------------------------------------" << endl;
+    std::cout << "------------------------------------------------------------------------------" << std::endl;
     return 0;
 }
 
@@ -41,20 +39,20 @@ int main()
 // #define EXAMPLE_2
 #ifdef EXAMPLE_2
 /*
-    Notes:  #define EXAMPLE_2
+    !Note:  #define EXAMPLE_2
 
-            EXAMPLE: 
+            *EXAMPLE: 
 */
 
 //
 
 int main()
 {
-    cout << "------------------------------ EXAMPLE_2 -------------------------------------" << endl;
+    std::cout << "------------------------------ EXAMPLE_2 -------------------------------------" << std::endl;
 
-    //
+    
 
-    cout << "--------------------------------------------------------------------------------" << endl;
+    std::cout << "------------------------------------------------------------------------------" << std::endl;
     return 0;
 }
 
@@ -65,20 +63,20 @@ int main()
 // #define EXAMPLE_N
 #ifdef EXAMPLE_N
 /*
-    Notes:  #define EXAMPLE_N
+    !Note:  #define EXAMPLE_N
 
-            EXAMPLE: 
+            *EXAMPLE: 
 */
 
 //
 
 int main()
 {
-    cout << "------------------------------ EXAMPLE_N -------------------------------------" << endl;
+    std::cout << "------------------------------ EXAMPLE_N -------------------------------------" << std::endl;
 
-    //
+    
 
-    cout << "--------------------------------------------------------------------------------" << endl;
+    std::cout << "------------------------------------------------------------------------------" << std::endl;
     return 0;
 }
 
