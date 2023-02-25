@@ -1,6 +1,6 @@
 /*
 
-The C++20 Masterclass: Set and Get
+The C++20 Masterclass Section 30: Classes Set and Get
 
 General Notes:
         Public methods to acess the Class member variables when these variables are private
@@ -9,19 +9,22 @@ General Notes:
 
    [REF]: No
 */
+#include <iostream>
 
-#define Test1
+//
 
-using namespace std;
+// #define EXAMPLE_1
+#ifdef EXAMPLE_1
+/*
+    !Note: #define EXAMPLE_1
+
+            *EXAMPLE: Set and Get
+*/
 
 const double PI{3.1415926535897932384626433832795};
 
 class Cylinder
 {
-
-private:
-    double base_radius{1};
-    double height{1};
 
 public:
     Cylinder() = default;
@@ -37,7 +40,7 @@ public:
         return PI * base_radius * height;
     }
 
-    // Set and Get methods to acess the private member variables in the Class
+    //* Set and Get methods to acess the private member variables in the Class
     double get_base_radius()
     {
         return base_radius;
@@ -57,29 +60,31 @@ public:
     {
         height = height_param;
     }
+
+private:
+    double base_radius{1};
+    double height{1};
+    
 };
 
-#ifdef Test1
-
-void test1()
+int main()
 {
+    std::cout << "------------------------------ EXAMPLE_1 -------------------------------------" << std::endl;
+
     Cylinder cylinder1(10, 10);
 
-    cout << "volume : " << cylinder1.volume() << endl;
+    std::cout << "volume: " << cylinder1.volume() << std::endl;
 
     // Modify the Object
     cylinder1.set_base_radius(100);
     cylinder1.set_height(10);
 
-    cout << "volume : " << cylinder1.volume() << endl;
-}
-#endif
+    std::cout << "volume : " << cylinder1.volume() << std::endl;
 
-#ifdef Test2
-/*
-    Notes:
-*/
-void test2()
-{
+    std::cout << "------------------------------------------------------------------------------" << std::endl;
+    return 0;
 }
-#endif
+
+#endif // EXAMPLE_1 END
+
+//

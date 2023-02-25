@@ -1,12 +1,18 @@
+
+//
+
+//
+
 #ifndef CYLINDER_H
 #define CYLINDER_H
 
-#include "constants.h"
+#include "constants.hpp"
 
 class Cylinder
 {
+
 public:
-    // Constctors
+    // Constructors
     Cylinder() = default;
     Cylinder(double rad_param, double height_param);
 
@@ -28,3 +34,5 @@ private:
 };
 
 #endif
+
+//

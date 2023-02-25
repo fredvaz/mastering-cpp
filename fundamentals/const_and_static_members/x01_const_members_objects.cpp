@@ -6,31 +6,33 @@ The C++20 Masterclass: Const Objects
 
 General Notes:
         We can't modify const objects. Yet, we cam't read from them either.
-        If declared a Object as const is we have to pass it to another const Object 
+        If declared a Object as const is we have to pass it to another const Object
         could potentially modify the object so the compiler will refuse to compile calls
         to them throught our const reference p parameter.
 
-        Therefore, we shoud declara them as const member function in a class 
+        Therefore, we shoud declara them as const member function in a class
         The correct implementation is EXAMPLE 5
 
    [REF]:
-   
+
 */
 #include <iostream>
-#include "dog.h"
-#include "dog.cpp"
+#include "libs/dog.hpp"
 
-using namespace std;
+//
 
-#ifdef Test1
-void test1()
+// #define EXAMPLE_1
+#ifdef EXAMPLE_1
+/*
+    !Note: #define EXAMPLE_1
+
+            *EXAMPLE: Non-const objects
+*/
+
+int main()
 {
-        /*
-    Notes:  #define Test1
 
-            Default Case : Non-const objects
-    */
-        cout << "--------------------------------------------------------------------------------" << endl;
+        std::cout << "------------------------------ EXAMPLE_1 -------------------------------------" << std::endl;
 
         Dog dog1("Fluffly", "Sheperd", 2);
 
@@ -40,44 +42,54 @@ void test1()
 
         dog1.print_info();
 
-        cout << "--------------------------------------------------------------------------------" << endl;
+        std::cout << "------------------------------------------------------------------------------" << std::endl;
+        return 0;
 }
-#endif
 
-#ifdef Test2
-void test2()
-{
-        /*
-    Notes:  #define Test2
+#endif // EXAMPLE_1 END
 
-            EXAMPLE : Const objects - Direct access
+//
 
-            If you fly the object as const, you want to be able to modify the object through the
+// #define EXAMPLE_2
+#ifdef EXAMPLE_2
+/*
+    !Note:  #define EXAMPLE_2
+
+            *EXAMPLE: Const objects - Direct access
+            If you flag the object as const, you want to be able to modify the object through the
             sideris. But no other function is going to work anymore because the compiler is going
             to think that you could go through those functions to modify your object.
-    */
-        cout << "--------------------------------------------------------------------------------" << endl;
+*/
+
+int main()
+{
+        std::cout << "------------------------------ EXAMPLE_2 -------------------------------------" << std::endl;
 
         const Dog dog1("Fluffly", "Sheperd", 2);
 
-        dog1.print_info(); // Compile error
+        dog1.print_info(); // Compiler error
 
         dog1.set_name("Milou"); // Comipler error : Dog Object is a const object we can't modify it
 
-        cout << "--------------------------------------------------------------------------------" << endl;
+        std::cout << "------------------------------------------------------------------------------" << std::endl;
+        return 0;
 }
-#endif
 
-#ifdef Test3
-void test3()
+#endif // EXAMPLE_2 END
+
+//
+
+// #define EXAMPLE_3
+#ifdef EXAMPLE_3
+/*
+    !Note:  #define EXAMPLE_3
+
+            *EXAMPLE: Const objects
+*/
+
+int main()
 {
-        /*
-    Notes:  #define Test3
-
-            EXAMPLE : Const objects
-
-    */
-        cout << "--------------------------------------------------------------------------------" << endl;
+        std::cout << "------------------------------ EXAMPLE_3 -------------------------------------" << std::endl;
 
         const Dog dog1("Fluffly", "Sheperd", 2);
 
@@ -124,12 +136,21 @@ void test3()
 
         // However, should we not expect to get the name? we are not modifying it in the function!
 
-        cout << "--------------------------------------------------------------------------------" << endl;
+        std::cout << "------------------------------------------------------------------------------" << std::endl;
+        return 0;
 }
-#endif
 
-#ifdef Test4
-/*                              Const Objects as function arguments                                 */
+#endif // EXAMPLE_3 END
+
+//
+
+// #define EXAMPLE_4
+#ifdef EXAMPLE_4
+/*
+    !Note:  #define EXAMPLE_4
+
+            *EXAMPLE:  Const Objects as function arguments
+*/
 
 // Function taking parameter by value
 // This causes no problem because we are working with a copy inside the function
@@ -151,9 +172,9 @@ void function_taking_dog_by_non_const_ref(Dog &dog_ref)
 // Parameter by const reference
 void function_taking_dog_by_const_ref(const Dog &dog_ref)
 {
-        //dog_ref.set_name("Rex"); // Compiler error: Still we can't modify it
-        //dog_ref.print_info(); // Compiler error: Still the Compiler doesn't know that the
-        // function doesn't change anything in the object in the real world
+        // dog_ref.set_name("Rex"); // Compiler error: Still we can't modify it
+        // dog_ref.print_info(); // Compiler error: Still the Compiler doesn't know that the
+        //  function doesn't change anything in the object in the real world
 }
 
 // Parameter by non-const pointer
@@ -166,39 +187,43 @@ void function_taking_dog_by_non_const_pointer(Dog *dog_ptr)
 // Parameter by const pointer
 void function_taking_dog_by_const_pointer(const Dog *dog_ptr)
 {
-        //dog_ptr->set_name("Rex"); // Compiler error: Still we can't modify it
-        //dog_ptr->print_info(); // Compiler error: Still the compiler that the functions does not change anything
+        // dog_ptr->set_name("Rex"); // Compiler error: Still we can't modify it
+        // dog_ptr->print_info(); // Compiler error: Still the compiler that the functions does not change anything
 }
 
-void test4()
+int main()
 {
-        /*
-    Notes:  #define Test4
-
-            EXAMPLE : Const Objects as function arguments
-    */
-        cout << "--------------------------------------------------------------------------------" << endl;
+        std::cout << "------------------------------ EXAMPLE_4 -------------------------------------" << std::endl;
 
         const Dog dog1("Fluffy", "Shepherd", 2);
 
-        cout << "Address of the object is: " << &dog1 << endl;
+        std::cout << "Address of the object is: " << &dog1 << std::endl;
 
         function_taking_dog_by_value(dog1); // OK
 
-        //function_taking_dog_by_non_const_ref(dog1); // Compiler error
+        // function_taking_dog_by_non_const_ref(dog1); // Compiler error
 
         function_taking_dog_by_const_ref(dog1); // OK
 
-        //function_taking_dog_by_non_const_pointer(&dog1); // Compiler error
+        // function_taking_dog_by_non_const_pointer(&dog1); // Compiler error
 
         function_taking_dog_by_const_pointer(&dog1); // OK
 
-        cout << "--------------------------------------------------------------------------------" << endl;
+        std::cout << "------------------------------------------------------------------------------" << std::endl;
+        return 0;
 }
-#endif
 
-#ifdef Test5
-/*                                    Const member functions                                       */
+#endif // EXAMPLE_4 END
+
+//
+
+#define EXAMPLE_5
+#ifdef EXAMPLE_5
+/*
+    !Note:  #define EXAMPLE_5
+
+            *EXAMPLE: Const member functions
+*/
 
 // Function taking parameter by value
 void function_taking_dog_by_value(Dog dog)
@@ -210,43 +235,41 @@ void function_taking_dog_by_value(Dog dog)
 // Parameter by const reference
 void function_taking_dog_by_const_ref(const Dog &dog_ref)
 {
-        //dog_ref.set_name("Rex"); // Compiler error: Still we can't modify it, we didn't set as const member
+        // dog_ref.set_name("Rex"); // Compiler error: Still we can't modify it, we didn't set as const member
         dog_ref.print_info(); // OK
 }
 
 // Parameter by const pointer
 void function_taking_dog_by_const_pointer(const Dog *dog_ptr)
 {
-        //dog_ptr->set_name("Rex"); // Compiler error: Still we can't modify it, we didn't set as const member
+        // dog_ptr->set_name("Rex"); // Compiler error: Still we can't modify it, we didn't set as const member
         dog_ptr->print_info(); // OK
 }
 
-
-void test5()
+int main()
 {
-        /*
-    Notes:  #define Test5
-
-            EXAMPLE : Const Member functions
-    */
-        cout << "--------------------------------------------------------------------------------" << endl;
+        std::cout << "------------------------------ EXAMPLE_5 -------------------------------------" << std::endl;
 
         const Dog dog1("Fluffy", "Shepherd", 2);
 
-        cout << "Address of the object is: " << &dog1 << endl;
+        std::cout << "Address of the object is: " << &dog1 << std::endl;
 
-        cout << "print_info : ";
-        dog1.print_info(); // OK 
+        std::cout << "print_info: ";
+        dog1.print_info(); // OK
 
-        cout << "by value : ";
+        std::cout << "by value: ";
         function_taking_dog_by_value(dog1); // OK : still is a copy passed
 
-        cout << "by const ref : ";
+        std::cout << "by const ref: ";
         function_taking_dog_by_const_ref(dog1); // OK
 
-        cout << "by const ptr : ";
+        std::cout << "by const ptr: ";
         function_taking_dog_by_const_pointer(&dog1); // OK
 
-        cout << "--------------------------------------------------------------------------------" << endl;
+        std::cout << "------------------------------------------------------------------------------" << std::endl;
+        return 0;
 }
-#endif
+
+#endif // EXAMPLE_5 END
+
+//

@@ -15,7 +15,7 @@ General Notes:
    
 */
 #include <iostream>
-#include "dog_aux.cpp"
+#include "libs/dog.hpp"
 
 using namespace std;
 

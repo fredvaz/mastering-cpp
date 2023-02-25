@@ -20,15 +20,15 @@ public:
     Dog() = default;
     Dog(const std::string &name_param, const std::string &breed_param, unsigned int age_param);
 
-    // Getter that work as Setter too: returns the reference/address of the varaible
+    //* Getter that work as Setter too: returns the reference/address of the varaible
     std::string &name()
     {
         std::cout << "non-const method called..." << std::endl;
         return m_name;
     }
 
-    // Overload the getter returning const reference to be compatible wiht const objects
-    // This would make our Class usable with const object and non-const objects
+    //* Overload the getter returning const reference to be compatible wiht const objects
+    //! This would make our Class usable with const object and non-const objects
     const std::string &name() const
     {
         std::cout << "const method called..." << std::endl;
