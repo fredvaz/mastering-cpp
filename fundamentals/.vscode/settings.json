@@ -63,7 +63,8 @@
     "xloctime": "cpp",
     "optional": "cpp",
     "fstream": "cpp",
-    "sstream": "cpp"
+    "sstream": "cpp",
+    "cerrno": "cpp"
   },
   "C_Cpp.dimInactiveRegions": false,
   "editor.tokenColorCustomizations": {
