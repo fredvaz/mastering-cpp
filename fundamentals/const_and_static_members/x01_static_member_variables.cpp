@@ -24,6 +24,9 @@ General Notes:
     !Note: #define EXAMPLE_1
 
             *EXAMPLE: Static members variables
+            - Non integral static member variables, be it const or non const can't be in-class initialized. 
+            That's forbidden by the C++ standard.
+            - Can't in-class initialize static char * member variables.
 */
 
 class Point

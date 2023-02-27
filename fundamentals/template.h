@@ -6,7 +6,7 @@ General Notes:
 
 
    [REF]:
-   
+
 */
 #include <iostream>
 
@@ -17,7 +17,7 @@ General Notes:
 /*
     !Note: #define EXAMPLE_1
 
-            *EXAMPLE: 
+            *EXAMPLE:
 */
 
 //
@@ -25,8 +25,6 @@ General Notes:
 int main()
 {
     std::cout << "------------------------------ EXAMPLE_1 -------------------------------------" << std::endl;
-
-    
 
     std::cout << "------------------------------------------------------------------------------" << std::endl;
     return 0;
@@ -41,7 +39,7 @@ int main()
 /*
     !Note:  #define EXAMPLE_2
 
-            *EXAMPLE: 
+            *EXAMPLE:
 */
 
 //
@@ -49,8 +47,6 @@ int main()
 int main()
 {
     std::cout << "------------------------------ EXAMPLE_2 -------------------------------------" << std::endl;
-
-    
 
     std::cout << "------------------------------------------------------------------------------" << std::endl;
     return 0;
@@ -65,7 +61,7 @@ int main()
 /*
     !Note:  #define EXAMPLE_N
 
-            *EXAMPLE: 
+            *EXAMPLE:
 */
 
 //
@@ -73,8 +69,6 @@ int main()
 int main()
 {
     std::cout << "------------------------------ EXAMPLE_N -------------------------------------" << std::endl;
-
-    
 
     std::cout << "------------------------------------------------------------------------------" << std::endl;
     return 0;

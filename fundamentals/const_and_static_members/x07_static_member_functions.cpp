@@ -29,6 +29,10 @@ General Notes:
             Static member functions cannot be virtual, const, volatile, or ref-qualified.
             The address of a static member function may be stored in a regular pointer to function
             but not in a pointer to member function.
+            - If you mark a member function as static, it can't access member variables directly
+            - static member function can't be const
+            - Static member functions have no business accessing member variables. They then have no
+            business accessing the this pointer
 */
 
 int main()
