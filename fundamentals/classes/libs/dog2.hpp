@@ -19,12 +19,12 @@ General Notes:
 #include <iostream>
 #include <string>
 
-class Dog
+class Dog2
 {
 
 public:
-    Dog() = default;
-    Dog(std::string_view name_param, std::string_view breed_param, unsigned int age_param);
+    Dog2() = default;
+    Dog2(std::string_view name_param, std::string_view breed_param, unsigned int age_param);
 
     // Getters
     std::string_view get_name();

@@ -13,7 +13,7 @@ General Notes:
 
 //
 
-#define EXAMPLE_1
+// #define EXAMPLE_1
 #ifdef EXAMPLE_1
 /*
     !Note: #define EXAMPLE_1
@@ -35,7 +35,7 @@ int main()
     dog1.name() = "Rex";
     dog1.print_info();
 
-    // Using Const Object
+    //* Using Const Object
     const Dog dog2("Max", "Shepherd", 2);
 
     dog2.print_info();
