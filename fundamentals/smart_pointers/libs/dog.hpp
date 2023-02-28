@@ -14,11 +14,6 @@ public:
     Dog() = default;
     ~Dog();
 
-    void print_dog() const
-    {
-        std::cout << "Printing dog : " << dog_name << std::endl;
-    }
-
     std::string get_name() const
     {
         return dog_name;
@@ -32,6 +27,11 @@ public:
     void print_info() const
     {
         std::cout << "Dog [ name: " << dog_name << " ]" << std::endl;
+    }
+
+    void print_dog() const
+    {
+        std::cout << "Printing dog: " << dog_name << std::endl;
     }
 
 private:
