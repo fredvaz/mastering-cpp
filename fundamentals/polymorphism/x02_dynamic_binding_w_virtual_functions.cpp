@@ -18,9 +18,9 @@ General Notes:
 
 */
 #include <iostream>
-#include "libs/shape2.hpp"
-#include "libs/oval2.hpp"
-#include "libs/circle2.hpp"
+#include "libs2/shape.hpp"
+#include "libs2/oval.hpp"
+#include "libs2/circle.hpp"
 
 //
 
@@ -108,7 +108,7 @@ int main()
     std::cout << "------------------------------------------------------------------------------" << std::endl;
 
     //* Shapes stored in collections
-    Shape *shape_collection[]{&shape1, &oval1, &circle1};
+    Shape *shape_collection[]{&shape1, &oval1, &circle1}; //* Shape is Pointer
 
     for (Shape *s_ptr : shape_collection) //* range for C++
     {

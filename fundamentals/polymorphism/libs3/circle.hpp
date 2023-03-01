@@ -3,7 +3,7 @@
 
 //
 
-#include "oval2.hpp"
+#include "oval.hpp"
 
 //
 
@@ -15,8 +15,8 @@ public:
     Circle(double radius, std::string_view description);
     ~Circle();
 
-    //* Dynamic binding (Polymorphism) with virtual functions
-    virtual void draw() const
+    //* Using the override keyword here too just as protection
+    virtual void draw() const override
     {
         std::cout << "Circle::draw() called. Drawing " << m_description 
         << " with radius: " << get_x_rad() << std::endl;

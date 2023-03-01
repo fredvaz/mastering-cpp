@@ -1,7 +1,7 @@
 
 //
 
-#include "oval2.hpp"
+#include "oval.hpp"
 
 Oval::Oval(double x_radius, double y_radius,
                 std::string_view description)

@@ -3,7 +3,7 @@
 
 //
 
-#include "shape2.hpp"
+#include "shape.hpp"
 
 //
 
@@ -19,12 +19,11 @@ public:
     //* Dynamic binding (Polymorphism) with virtual functions
     virtual void draw() const
     {
-        std::cout << "Oval::draw() called. Drawing " << m_description 
-        << " with m_x_radius: " << m_x_radius << " and m_y_radius: " << m_y_radius
-        << std::endl;
+        std::cout << "Oval::draw() called. Drawing " << m_description
+                  << " with m_x_radius: " << m_x_radius << " and m_y_radius: " << m_y_radius
+                  << std::endl;
     }
 
-protected:
     double get_x_rad() const
     {
         return m_x_radius;

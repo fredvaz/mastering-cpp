@@ -18,9 +18,13 @@ General Notes:
 
 */
 #include <iostream>
-#include "libs2/shape.hpp"
-#include "libs2/oval.hpp"
-#include "libs2/circle.hpp"
+#include "libs5/animal.h"
+#include "libs5/feline.h"
+#include "libs5/dog.h"
+#include "libs5/cat.h"
+#include "libs5/bird.h"
+#include "libs5/pigeon.h"
+#include "libs5/crow.h"
 
 //
 
@@ -29,27 +33,12 @@ General Notes:
 /*
     !Note: #define EXAMPLE_1
 
-            *EXAMPLE: Size of polymorphic objects and slicing
-            !Note: the objects with Dynamic binding (polymorphism) will have a higher size
+            *EXAMPLE: Inheritance and Polymorphism at different levels
 */
 
 int main()
 {
     std::cout << "------------------------------ EXAMPLE_1 -------------------------------------" << std::endl;
-
-    //* Comparing object sizes: the objects with Polymorphism will have a higher size
-    std::cout << "sizeof(Shape): " << sizeof(Shape) << std::endl;   // dynamic : 40
-    std::cout << "sizeof(Oval): " << sizeof(Oval) << std::endl;     // dynamic : 56
-    std::cout << "sizeof(Circle): " << sizeof(Circle) << std::endl; // dynamic : 56
-
-    std::cout << "------------------------------------------------------------------------------" << std::endl;
-
-    //* Slicing: when we do a assignement (=) it will only store object of which type is the variable
-    Circle circle1(3.3, "Circle1");
-
-    Shape shape = circle1;
-    
-    shape.draw(); //! Shape::draw() called, not a circle method called as maybe we expect
 
     std::cout << "------------------------------------------------------------------------------" << std::endl;
     return 0;
