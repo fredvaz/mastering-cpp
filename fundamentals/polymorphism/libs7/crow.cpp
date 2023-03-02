@@ -1,6 +1,3 @@
-
-//
-
 #include "crow.hpp"
 
 //

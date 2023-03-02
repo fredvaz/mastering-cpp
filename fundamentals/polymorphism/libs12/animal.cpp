@@ -1,7 +1,3 @@
-
-
-//
-
 #include "animal.hpp"
 
 //
@@ -13,4 +9,5 @@ Animal::Animal(std::string_view description)
 
 Animal::~Animal()
 {
+    std::cout << "Animal destructor called" << std::endl;
 }

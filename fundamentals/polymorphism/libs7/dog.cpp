@@ -1,6 +1,3 @@
-
-//
-
 #include "dog.hpp"
 
 //

@@ -17,7 +17,7 @@ General Notes:
 /*
     !Note: #define EXAMPLE_1
 
-            *EXAMPLE:
+            * EXAMPLE:
 */
 
 //
@@ -39,7 +39,7 @@ int main()
 /*
     !Note:  #define EXAMPLE_2
 
-            *EXAMPLE:
+            * EXAMPLE:
 */
 
 //
@@ -61,7 +61,7 @@ int main()
 /*
     !Note:  #define EXAMPLE_N
 
-            *EXAMPLE:
+            * EXAMPLE:
 */
 
 //

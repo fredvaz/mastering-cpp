@@ -35,3 +35,31 @@ run_x06:
 run_x07:
 	g++ -g ../x07*.cpp ../libs5/*.cpp -std=c++2a -o main_app.out
 	./main_app.out
+
+run_x08:
+	g++ -g ../x08*.cpp ../libs6/*.cpp -std=c++2a -o main_app.out
+	./main_app.out
+
+run_x09:
+	g++ -g ../x09*.cpp ../libs7/*.cpp -std=c++2a -o main_app.out
+	./main_app.out
+
+run_x10:
+	g++ -g ../x10*.cpp ../libs8/*.cpp -std=c++2a -o main_app.out
+	./main_app.out
+
+run_x11:
+	g++ -g ../x11*.cpp ../libs9/*.cpp -std=c++2a -o main_app.out
+	./main_app.out
+
+run_x12:
+	g++ -g ../x12*.cpp ../libs10/*.cpp -std=c++2a -o main_app.out
+	./main_app.out
+
+run_x13:
+	g++ -g ../x13*.cpp ../libs11/*.cpp -std=c++2a -o main_app.out
+	./main_app.out
+
+run_x14:
+	g++ -g ../x14*.cpp ../libs11/*.cpp -std=c++2a -o main_app.out
+	./main_app.out

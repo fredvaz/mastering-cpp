@@ -1,6 +1,3 @@
-
-//
-
 #include "feline.hpp"
 
 //
@@ -12,4 +9,5 @@ Feline::Feline(std::string_view fur_style, std::string_view description)
 
 Feline::~Feline()
 {
+    std::cout << "Feline destructor called" << std::endl;
 }
