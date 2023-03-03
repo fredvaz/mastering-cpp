@@ -61,5 +61,21 @@ run_x13:
 	./main_app.out
 
 run_x14:
-	g++ -g ../x14*.cpp ../libs11/*.cpp -std=c++2a -o main_app.out
+	g++ -g ../x14*.cpp ../libs12/*.cpp -std=c++2a -o main_app.out
+	./main_app.out
+
+run_x15:
+	g++ -g ../x15*.cpp -std=c++2a -o main_app.out
+	./main_app.out
+
+run_x16:
+	g++ -g ../x16*.cpp -std=c++2a -o main_app.out
+	./main_app.out
+
+run_x17:
+	g++ -g ../x17*.cpp ../libs14/*.cpp -std=c++2a -o main_app.out
+	./main_app.out
+
+run_x18:
+	g++ -g ../x18*.cpp ../libs15/*.cpp -std=c++2a -o main_app.out
 	./main_app.out

@@ -1,11 +1,12 @@
-#include "dog.h"
+#include "dog.hpp"
 
-Dog::Dog(const std::string& fur_style, const std::string& description)
-    : Feline(fur_style,description)
+//
+
+Dog::Dog(const std::string &fur_style, const std::string &description)
+    : Feline(fur_style, description)
 {
 }
 
 Dog::~Dog()
 {
 }
-
