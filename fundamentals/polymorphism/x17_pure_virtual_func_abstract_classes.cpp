@@ -41,6 +41,7 @@ General Notes:
             * - You can't call the pure virtual functions from the constructor of the abstract class
             * - The constructor of the abstract class is used by the deriving class to build up the base
             * part of the object
+            https://en.cppreference.com/w/cpp/language/abstract_class
 */
 
 int main()

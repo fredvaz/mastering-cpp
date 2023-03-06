@@ -40,6 +40,7 @@ General Notes:
             * used to model waht is called an interface in Object Oriented Programming
             * - An interface is a specification of something that will be fully implemented in a
             * derived class, but the specification itself resides in the abstract class
+            https://en.cppreference.com/w/cpp/language/abstract_class
 */
 
 class Point : public StreamInsertable
