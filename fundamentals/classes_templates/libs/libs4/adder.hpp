@@ -28,7 +28,7 @@ class Adder <char*> //* of char* type
 public:
 	Adder(){
     }
-	char* add(char* a, char* b);
+	char* add(char* a, char* b); //* The main reason for the Template specialization need
 };
 
  //* template <> //  <= this is not needed if defined outside of class

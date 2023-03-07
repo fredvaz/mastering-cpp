@@ -23,3 +23,19 @@ run_x03:
 run_x04:
 	g++ -g ../x04*.cpp ../libs/libs4/*.cpp -std=c++2a -o main_app
 	./main_app
+
+run_x05:
+	g++ -g ../x05*.cpp ../libs/libs5/*.cpp -std=c++2a -o main_app
+	./main_app
+
+run_x06:
+	g++ -g ../x06*.cpp -std=c++2a -o main_app
+	./main_app
+
+run_x07:
+	g++ -g ../x07*.cpp ../libs/libs6/*.cpp -std=c++2a -o main_app
+	./main_app
+
+run_x08:
+	g++ -g ../x08*.cpp ../libs/libs7/*.cpp -std=c++2a -o main_app
+	./main_app
