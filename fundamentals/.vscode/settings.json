@@ -64,7 +64,9 @@
     "optional": "cpp",
     "fstream": "cpp",
     "sstream": "cpp",
-    "cerrno": "cpp"
+    "cerrno": "cpp",
+    "set": "cpp",
+    "list": "cpp"
   },
   "C_Cpp.dimInactiveRegions": false,
   "editor.tokenColorCustomizations": {
