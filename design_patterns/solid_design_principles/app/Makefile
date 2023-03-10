@@ -8,6 +8,10 @@ build_and_run:
 	g++ -g ../*.cpp -std=c++2a -o main_app
 	./main_app
 
+run_tests:
+	g++ -g ../../tests*.cpp -std=c++2a -o main_app
+	./main_app
+
 run_x01:
 	g++ -g ../x01*.cpp -std=c++2a -o main_app
 	./main_app
@@ -34,8 +38,4 @@ run_x06:
 
 run_x07:
 	g++ -g ../x07*.cpp -std=c++2a -o main_app
-	./main_app
-
-run_x08:
-	g++ -g ../x08*.cpp -std=c++2a -o main_app
 	./main_app
