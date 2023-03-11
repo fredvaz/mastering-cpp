@@ -99,7 +99,7 @@ void process(Rectangle &r)
          << ", got " << r.area() << "\n";
 }
 
-//* 3. One Solution could be just Make a Fcatory (see next examples)
+//* 3. One Solution could be just Make a Fcatory (see next Factories section)
 struct RectangleFactory
 {
     static Rectangle create_rectangle(int w, int h);

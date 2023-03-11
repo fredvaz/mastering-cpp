@@ -1,179 +1,88 @@
-// open closed principle
-
-// open for extension, closed for modification
-
+#include <iostream>
 #include <string>
 #include <vector>
-#include <iostream>
+#include <tuple>
 using namespace std;
 
-enum class Color
-{
-    red,
-    green,
-    blue
-};
-enum class Size
-{
-    small,
-    medium,
-    large
-};
+// A. High-level modules should not depend on low-level modules.
+//    Both should depend on abstractions.
+// B. Abstractions should not depend on details. 
+//    Details should depend on abstractions.
 
-struct Product
+enum class Relationship
 {
-    string name;
-    Color color;
-    Size size;
+  parent,
+  child,
+  sibling
 };
 
-struct ProductFilter
+struct Person
 {
-    typedef vector<Product *> Items;
+  string name;
+};
 
-    Items by_color(Items items, const Color color)
+struct RelationshipBrowser
+{
+  virtual vector<Person> find_all_children_of(const string& name) = 0;
+};
+
+struct Relationships : RelationshipBrowser // low-level
+{
+  vector<tuple<Person, Relationship, Person>> relations;
+
+  void add_parent_and_child(const Person& parent, const Person& child)
+  {
+    relations.push_back({parent, Relationship::parent, child});
+    relations.push_back({child, Relationship::child, parent});
+  }
+
+  vector<Person> find_all_children_of(const string &name) override
+  {
+    vector<Person> result;
+    for (auto&& [first, rel, second] : relations)
     {
-        Items result;
-        for (auto &i : items)
-            if (i->color == color)
-                result.push_back(i);
-        return result;
+      if (first.name == name && rel == Relationship::parent)
+      {
+        result.push_back(second);
+      }
     }
-
-    Items by_size(Items items, const Size size)
-    {
-        Items result;
-        for (auto &i : items)
-            if (i->size == size)
-                result.push_back(i);
-        return result;
-    }
-
-    Items by_size_and_color(Items items, const Size size, const Color color)
-    {
-        Items result;
-        for (auto &i : items)
-            if (i->size == size && i->color == color)
-                result.push_back(i);
-        return result;
-    }
+    return result;
+  }
 };
 
-template <typename T>
-struct AndSpecification;
-
-template <typename T>
-struct Specification
+struct Research // high-level
 {
-    virtual ~Specification() = default;
-    virtual bool is_satisfied(T *item) const = 0;
-
-    // new: breaks OCP if you add it post-hoc
-    /*AndSpecification<T> operator&&(Specification<T>&& other)
+  Research(RelationshipBrowser& browser)
+  {
+    for (auto& child : browser.find_all_children_of("John"))
     {
-      return AndSpecification<T>(*this, other);
-    }*/
-};
-
-// new:
-template <typename T>
-AndSpecification<T> operator&&(const Specification<T> &first, const Specification<T> &second)
-{
-    return {first, second};
-}
-
-template <typename T>
-struct Filter
-{
-    virtual vector<T *> filter(vector<T *> items,
-                               Specification<T> &spec) = 0;
-};
-
-struct BetterFilter : Filter<Product>
-{
-    vector<Product *> filter(vector<Product *> items,
-                             Specification<Product> &spec) override
-    {
-        vector<Product *> result;
-        for (auto &p : items)
-            if (spec.is_satisfied(p))
-                result.push_back(p);
-        return result;
+      cout << "John has a child called " << child.name << endl;
     }
+  }
+//  Research(const Relationships& relationships)
+//  {
+//    auto& relations = relationships.relations;
+//    for (auto&& [first, rel, second] : relations)
+//    {
+//      if (first.name == "John" && rel == Relationship::parent)
+//      {
+//        cout << "John has a child called " << second.name << endl;
+//      }
+//    }
+//  }
 };
-
-struct ColorSpecification : Specification<Product>
-{
-    Color color;
-
-    ColorSpecification(Color color) : color(color) {}
-
-    bool is_satisfied(Product *item) const override
-    {
-        return item->color == color;
-    }
-};
-
-struct SizeSpecification : Specification<Product>
-{
-    Size size;
-
-    explicit SizeSpecification(const Size size)
-        : size{size}
-    {
-    }
-
-    bool is_satisfied(Product *item) const override
-    {
-        return item->size == size;
-    }
-};
-
-template <typename T>
-struct AndSpecification : Specification<T>
-{
-    const Specification<T> &first;
-    const Specification<T> &second;
-
-    AndSpecification(const Specification<T> &first, const Specification<T> &second)
-        : first(first), second(second) {}
-
-    bool is_satisfied(T *item) const override
-    {
-        return first.is_satisfied(item) && second.is_satisfied(item);
-    }
-};
-
-// new:
 
 int main()
 {
-    Product apple{"Apple", Color::green, Size::small};
-    Product tree{"Tree", Color::green, Size::large};
-    Product house{"House", Color::blue, Size::large};
+  Person parent{"John"};
+  Person child1{"Chris"};
+  Person child2{"Matt"};
 
-    const vector<Product *> all{&apple, &tree, &house};
+  Relationships relationships;
+  relationships.add_parent_and_child(parent, child1);
+  relationships.add_parent_and_child(parent, child2);
 
-    BetterFilter bf;
-    ColorSpecification green(Color::green);
-    auto green_things = bf.filter(all, green);
-    for (auto &x : green_things)
-        cout << x->name << " is green\n";
+  Research _(relationships);
 
-    SizeSpecification large(Size::large);
-    AndSpecification<Product> green_and_large(green, large);
-
-    // auto big_green_things = bf.filter(all, green_and_large);
-
-    // use the operator instead (same for || etc.)
-    auto spec = green && large;
-    for (auto &x : bf.filter(all, spec))
-        cout << x->name << " is green and large\n";
-
-    // warning: the following will compile but will NOT work
-    // auto spec2 = SizeSpecification{Size::large} &&
-    //              ColorSpecification{Color::blue};
-
-    // getchar();
-    return 0;
+  return 0;
 }
