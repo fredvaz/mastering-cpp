@@ -24,9 +24,9 @@ General Notes:
     !Note: #define EXAMPLE_1
 
             * EXAMPLE: Function Pointers
-            * A function is just a block of code that lives somewhere in the memory map of our C++ program. 
+            * A function is just a block of code that lives somewhere in the memory map of our C++ program.
             * We can grab the address of the function and store it in a function pointer.
-            
+
 
 */
 
@@ -41,8 +41,8 @@ int main()
 
     //* Different ways of setting a function Pointer
 
-    // double (*f_ptr) (double, double)  = &add;
-    // double(*f_ptr) (double,double) = add;
+    double (*f_ptr)(double, double) = &add;
+    // double (*f_ptr)(double, double) = add;
 
     // double(*f_ptr) (double,double) {&add};
     // double(*f_ptr) (double,double){add};
@@ -53,8 +53,8 @@ int main()
     // auto *f_ptr = &add;
     // auto *f_ptr = add;
 
-    //! Things gone wroong
-    double (*f_ptr)(double, double) = nullptr;
+    //! This will generate a Segmentation fault
+    // double (*f_ptr)(double, double) = nullptr;
 
     std::cout << "add(10,30): " << f_ptr(10, 30) << std::endl;
 
