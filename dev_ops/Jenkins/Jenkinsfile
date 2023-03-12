@@ -14,14 +14,14 @@ pipeline
         {
            steps
            {
-                sh "git clone https://github.com/jenkins-docs/simple-java-maven-app.git"
+                sh "git clone https://github.com/jabedhasan21/java-hello-world-with-maven.git"
            }
         }
         stage("Build")
         {
             steps
             {
-                dir("simple-java-app")
+                dir("java-hello-world-with-maven")
                 {
                     sh "mvn clean install"
                 }
@@ -30,7 +30,7 @@ pipeline
         stage("Test")
         {
             steps{
-                dir("simple-java-app")
+                dir("java-hello-world-with-maven")
                 {
                     sh "mvn test"
                 }
