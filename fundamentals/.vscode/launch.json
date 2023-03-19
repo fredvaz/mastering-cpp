@@ -23,7 +23,7 @@
     },
     {
       "name": "C/C++: cl.exe build and debug active file",
-      "type": "cppvsdbg",
+      "type": "cppdbg",
       "request": "launch",
       "program": "${workspaceFolder}\\main.exe",
       "args": [],
